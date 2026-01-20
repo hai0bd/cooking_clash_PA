@@ -8,11 +8,9 @@ export class Customer extends Component {
 
     public state: CustomerState = null;
 
-    public init(parentNode: Node, pos?: Vec3): void{
+    public init(parentNode: Node, pos: Vec3): void {
         this.node.setParent(parentNode);
-        if (pos) {
-            this.node.setPosition(pos);
-        }
+        this.node.setPosition(pos);
     }
 
     public isState(state: CustomerState): boolean {
@@ -50,7 +48,7 @@ abstract class CustomerLogic {
 
 class NormalCustomer extends CustomerLogic {
     excute(customer: Customer): void {
-        
+
     }
 }
 
@@ -61,6 +59,7 @@ class TroubleCustomers extends CustomerLogic {
 
 export enum CustomerState {
     IDLE,
+    WAITING,
     HAPPY,
     ANGRY,
     EATING,

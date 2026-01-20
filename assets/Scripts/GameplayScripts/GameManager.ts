@@ -1,6 +1,6 @@
 import { _decorator, CCInteger, Component, instantiate, Node, Prefab, Vec3 } from 'cc';
 import { UIManager } from '../UIScripts/UIManager';
-import { Customer } from './Customer';
+import { Customer, CustomerState } from './Customer';
 import { TroubleCustomers } from './TroubleCustomer';
 import { NormalCustomers } from './NormalCustomer';
 const { ccclass, property } = _decorator;
@@ -46,6 +46,13 @@ export class GameManager extends Component {
     nextCustomer(): void {
         this.customerIndex++;
         this.customers[this.customerIndex];
+        this.genCustomers();
+    }
+
+    throwBomb(): void {
+        for (let i = 0; i < this.customers.length; i++) {
+            this.customers[i].changeState(CustomerState.SCARED);
+        }
     }
 
     private genCustomers(): void {
@@ -65,7 +72,7 @@ export class GameManager extends Component {
 }
 
 
-enum Point{
+enum Point {
     SpawnPoint = 0,
     MidPoint = 1,
     OrderPoint = 2,
