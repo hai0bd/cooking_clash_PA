@@ -1,0 +1,99 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "e1d7ff6c-8059-4fcf-ac9b-d16cb6908a47",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "96c26": {
+      "importer": "gltf-animation",
+      "uuid": "e1d7ff6c-8059-4fcf-ac9b-d16cb6908a47@96c26",
+      "displayName": "",
+      "id": "96c26",
+      "name": "IdleGod.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 3.9833333492279053
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "503de": {
+      "importer": "gltf-scene",
+      "uuid": "e1d7ff6c-8059-4fcf-ac9b-d16cb6908a47@503de",
+      "displayName": "",
+      "id": "503de",
+      "name": "Idle.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "root|root|root|rigAction",
+        "duration": 3.9833333492279053,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "IdleGod",
+            "from": 0,
+            "to": 3.9833333492279053,
+            "wrapMode": 2,
+            "previousId": "96c26"
+          }
+        ]
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "e1d7ff6c-8059-4fcf-ac9b-d16cb6908a47@503de"
+      ]
+    }
+  }
+}
