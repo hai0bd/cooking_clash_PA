@@ -1,0 +1,156 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "fb7acb23-a8df-43c2-a66c-b7c3ac02d569",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "25198": {
+      "importer": "gltf-scene",
+      "uuid": "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@25198",
+      "displayName": "",
+      "id": "25198",
+      "name": "Throw object.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e2349": {
+      "importer": "gltf-mesh",
+      "uuid": "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@e2349",
+      "displayName": "",
+      "id": "e2349",
+      "name": "Mesh.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 2314
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d1493": {
+      "importer": "gltf-animation",
+      "uuid": "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@d1493",
+      "displayName": "",
+      "id": "d1493",
+      "name": "Armature|ArmatureAction.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.8166666626930237
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "438fe": {
+      "importer": "gltf-skeleton",
+      "uuid": "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@438fe",
+      "displayName": "",
+      "id": "438fe",
+      "name": "UnnamedSkeleton.skeleton",
+      "userData": {
+        "gltfIndex": 0,
+        "jointsLength": 20
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5b531": {
+      "importer": "gltf-material",
+      "uuid": "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@5b531",
+      "displayName": "",
+      "id": "5b531",
+      "name": "HandsSkin.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "Armature|ArmatureAction",
+        "duration": 0.8166666626930237,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Armature|ArmatureAction",
+            "from": 0,
+            "to": 0.8166666626930237,
+            "wrapMode": 2,
+            "previousId": "d1493"
+          }
+        ]
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@e2349"
+      ],
+      "skeletons": [
+        "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@438fe"
+      ],
+      "textures": [],
+      "materials": [
+        "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@5b531"
+      ],
+      "scenes": [
+        "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@25198"
+      ]
+    }
+  }
+}

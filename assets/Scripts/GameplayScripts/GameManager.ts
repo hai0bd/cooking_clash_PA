@@ -3,6 +3,9 @@ import { UIManager } from '../UIScripts/UIManager';
 import { Customer, CustomerState } from './Customer';
 import { TroubleCustomers } from './TroubleCustomer';
 import { NormalCustomers } from './NormalCustomer';
+import { Order } from './Order/OrderService';
+import { PlayerController } from './PlayerController';
+import { OrderType } from './Order/OrderType';
 const { ccclass, property } = _decorator;
 
 @ccclass('GameManager')
@@ -11,6 +14,9 @@ export class GameManager extends Component {
 
     @property(CCInteger)
     private customerLimit: number = 3;
+
+    @property(PlayerController)
+    private player: PlayerController = null;
 
     @property(Prefab)
     private customerPrefab: Prefab[] = [];
@@ -23,7 +29,7 @@ export class GameManager extends Component {
 
 
     private customerIndex: number = 1;
-    private customers: Customer[] = [];
+    private customer: Customer | null = null;
 
     public static get instance(): GameManager {
         if (!this._instance) {
@@ -45,29 +51,50 @@ export class GameManager extends Component {
 
     nextCustomer(): void {
         this.customerIndex++;
-        this.customers[this.customerIndex];
         this.genCustomers();
-    }
-
-    throwBomb(): void {
-        for (let i = 0; i < this.customers.length; i++) {
-            this.customers[i].changeState(CustomerState.SCARED);
-        }
     }
 
     private genCustomers(): void {
         const customerNode = instantiate(this.customerPrefab[0]);
-        let customer: Customer | null = null;
 
-        if (this.customerIndex % 2 == 0) customer = customerNode.addComponent(TroubleCustomers);
-        else customer = customerNode.addComponent(NormalCustomers);
+        if (this.customerIndex % 2 == 0) this.customer = customerNode.addComponent(TroubleCustomers);
+        else this.customer = customerNode.addComponent(NormalCustomers);
 
-        if (customer) {
+        if (this.customer) {
             const targetPoint = this.customerIndex == 0 ? Point.OrderPoint : Point.SpawnPoint;
             const pos = this.listPoint[targetPoint].position;
-            customer.init(this.customerParentNode, pos);
-            this.customers.push(customer);
+            const rot = this.listPoint[targetPoint].rotation;
+            this.customer.init(this.customerParentNode, pos, rot);
+
+            if(targetPoint === Point.SpawnPoint){
+                //customer move to mid point and then to order point
+                this.customer.getIn(this.listPoint[Point.MidPoint], this.listPoint[Point.OrderPoint]);
+            }
+            else this.customer.changeState(CustomerState.WAITING);
         }
+    }
+
+    public customerOrder(order: Order): void {
+        if (this.customer && this.customer.isState(CustomerState.WAITING)) {
+            /* this.customer.changeState(CustomerState.EATING);
+            setTimeout(() => {
+                this.customer?.getOut(this.listPoint[Point.ExitPoint], this.listPoint[Point.DestroyPoint]);
+                UIManager.instance.updateScore(10);
+                this.nextCustomer();
+            }, 5000); */
+        }
+    }
+
+    public serveOrder(orderType: OrderType) {
+        if(this.customer && this.customer.order.type === orderType)
+        {
+            this.customer.changeState(CustomerState.EATING);
+            setTimeout(() => {
+                this.customer?.getOut(this.listPoint[Point.ExitPoint], this.listPoint[Point.DestroyPoint]);
+                // UIManager.instance.updateScore(10);
+            }, 5000);
+        }
+        return false;
     }
 }
 

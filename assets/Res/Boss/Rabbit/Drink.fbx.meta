@@ -1,0 +1,99 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "617bd0e9-df04-4c2c-ae5b-8a63ac6b877a",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "96c26": {
+      "importer": "gltf-animation",
+      "uuid": "617bd0e9-df04-4c2c-ae5b-8a63ac6b877a@96c26",
+      "displayName": "",
+      "id": "96c26",
+      "name": "Drink.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 2.683333396911621
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "b8361": {
+      "importer": "gltf-scene",
+      "uuid": "617bd0e9-df04-4c2c-ae5b-8a63ac6b877a@b8361",
+      "displayName": "",
+      "id": "b8361",
+      "name": "Drink.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "root|root|root|rigAction",
+        "duration": 2.683333396911621,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Drink",
+            "from": 0,
+            "to": 2.683333396911621,
+            "wrapMode": 2,
+            "previousId": "96c26"
+          }
+        ]
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "617bd0e9-df04-4c2c-ae5b-8a63ac6b877a@b8361"
+      ]
+    }
+  }
+}

@@ -2,10 +2,32 @@
   "__version__": "1.0.6",
   "general": {
     "designResolution": {
-      "width": 1080,
-      "height": 1920,
+      "width": 1920,
+      "height": 1080,
       "fitHeight": true
     }
   },
-  "custom_joint_texture_layouts": []
+  "custom_joint_texture_layouts": [],
+  "layer": [
+    {
+      "name": "COFFEE",
+      "value": 1
+    },
+    {
+      "name": "BEEFSTEAK",
+      "value": 2
+    },
+    {
+      "name": "SALAD",
+      "value": 4
+    },
+    {
+      "name": "SANDWICH",
+      "value": 8
+    },
+    {
+      "name": "BOMB",
+      "value": 16
+    }
+  ]
 }

@@ -1,0 +1,112 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "ea306d3f-4c24-439b-ac32-8f354fdc1f56",
+  "files": [],
+  "subMetas": {
+    "8f80f": {
+      "importer": "gltf-mesh",
+      "uuid": "ea306d3f-4c24-439b-ac32-8f354fdc1f56@8f80f",
+      "displayName": "",
+      "id": "8f80f",
+      "name": "e_low_MK2_Gran��t_0.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 1790
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7d6ab": {
+      "importer": "texture",
+      "uuid": "ea306d3f-4c24-439b-ac32-8f354fdc1f56@7d6ab",
+      "displayName": "",
+      "id": "7d6ab",
+      "name": "base_color_texture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/Res/Grant_BaseColor.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4c9ce": {
+      "importer": "gltf-scene",
+      "uuid": "ea306d3f-4c24-439b-ac32-8f354fdc1f56@4c9ce",
+      "displayName": "",
+      "id": "4c9ce",
+      "name": "Grant.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "base_color_texture",
+        "uri": "db://assets/Res/Grant_BaseColor.png"
+      }
+    ],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "ea306d3f-4c24-439b-ac32-8f354fdc1f56@8f80f"
+      ],
+      "skeletons": [],
+      "textures": [
+        "ea306d3f-4c24-439b-ac32-8f354fdc1f56@7d6ab"
+      ],
+      "materials": [
+        "d4a82b76-72e4-4f6a-9a91-c3374bfaa019"
+      ],
+      "scenes": [
+        "ea306d3f-4c24-439b-ac32-8f354fdc1f56@4c9ce"
+      ]
+    },
+    "dumpMaterials": true,
+    "materialDumpDir": "db://assets/Res/Materials_Grant"
+  }
+}
