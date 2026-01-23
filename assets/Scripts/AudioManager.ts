@@ -1,13 +1,6 @@
 import { _decorator, Component, AudioSource, AudioClip } from 'cc';
+import { ESound } from './Core/Enum';
 const { ccclass, property } = _decorator;
-
-export enum ESound {
-    Click,
-    Pour,
-    thank,
-    great,
-    Capy,
-}
 
 @ccclass('AudioManager')
 export class AudioManager extends Component {

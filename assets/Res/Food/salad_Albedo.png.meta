@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "4d235c77-262f-42aa-b5fb-7baf720457db",
+  "uuid": "7b084faa-5540-4bb3-9adb-9cd7507a1b39",
   "files": [
     ".json",
     ".png"
@@ -10,19 +10,19 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "4d235c77-262f-42aa-b5fb-7baf720457db@6c48a",
-      "displayName": "tri_star_drumsticks_d",
+      "uuid": "7b084faa-5540-4bb3-9adb-9cd7507a1b39@6c48a",
+      "displayName": "salad_Albedo",
       "id": "6c48a",
       "name": "texture",
       "userData": {
-        "wrapModeS": "clamp-to-edge",
-        "wrapModeT": "clamp-to-edge",
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
         "minfilter": "linear",
         "magfilter": "linear",
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "4d235c77-262f-42aa-b5fb-7baf720457db",
+        "imageUuidOrDatabaseUri": "7b084faa-5540-4bb3-9adb-9cd7507a1b39",
         "visible": false
       },
       "ver": "1.0.22",
@@ -37,6 +37,6 @@
     "type": "texture",
     "hasAlpha": true,
     "fixAlphaTransparencyArtifacts": false,
-    "redirect": "4d235c77-262f-42aa-b5fb-7baf720457db@6c48a"
+    "redirect": "7b084faa-5540-4bb3-9adb-9cd7507a1b39@6c48a"
   }
 }

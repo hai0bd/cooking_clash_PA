@@ -4,7 +4,8 @@
     "designResolution": {
       "width": 1920,
       "height": 1080,
-      "fitHeight": true
+      "fitHeight": true,
+      "fitWidth": true
     }
   },
   "custom_joint_texture_layouts": [],
@@ -28,6 +29,14 @@
     {
       "name": "BOMB",
       "value": 16
+    },
+    {
+      "name": "CHICKEN",
+      "value": 32
+    },
+    {
+      "name": "CHIPS",
+      "value": 64
     }
   ]
 }

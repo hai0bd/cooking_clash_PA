@@ -2,76 +2,17 @@
   "ver": "2.3.13",
   "importer": "fbx",
   "imported": true,
-  "uuid": "2b8488f1-a4e0-41dd-9e2f-c52eb3a1d10d",
-  "files": [],
+  "uuid": "fb7acb23-a8df-43c2-a66c-b7c3ac02d569",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
   "subMetas": {
-    "7579e": {
-      "importer": "gltf-mesh",
-      "uuid": "2b8488f1-a4e0-41dd-9e2f-c52eb3a1d10d@7579e",
+    "25198": {
+      "importer": "gltf-scene",
+      "uuid": "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@25198",
       "displayName": "",
-      "id": "7579e",
-      "name": "jcsc_chicken.mesh",
-      "userData": {
-        "gltfIndex": 0,
-        "triangleCount": 762
-      },
-      "ver": "1.1.1",
-      "imported": true,
-      "files": [
-        ".bin",
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "43c71": {
-      "importer": "gltf-embeded-image",
-      "uuid": "2b8488f1-a4e0-41dd-9e2f-c52eb3a1d10d@43c71",
-      "displayName": "",
-      "id": "43c71",
-      "name": "file1.image",
-      "userData": {
-        "gltfIndex": 0,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": true,
-        "type": "texture"
-      },
-      "ver": "1.0.3",
-      "imported": true,
-      "files": [
-        ".json",
-        ".png"
-      ],
-      "subMetas": {}
-    },
-    "d20e9": {
-      "importer": "texture",
-      "uuid": "2b8488f1-a4e0-41dd-9e2f-c52eb3a1d10d@d20e9",
-      "displayName": "",
-      "id": "d20e9",
-      "name": "file1.texture",
-      "userData": {
-        "wrapModeS": "repeat",
-        "wrapModeT": "repeat",
-        "minfilter": "linear",
-        "magfilter": "linear",
-        "mipfilter": "none",
-        "anisotropy": 0,
-        "isUuid": true,
-        "imageUuidOrDatabaseUri": "2b8488f1-a4e0-41dd-9e2f-c52eb3a1d10d@43c71"
-      },
-      "ver": "1.0.22",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "1c6c3": {
-      "importer": "gltf-material",
-      "uuid": "2b8488f1-a4e0-41dd-9e2f-c52eb3a1d10d@1c6c3",
-      "displayName": "",
-      "id": "1c6c3",
-      "name": "food_mat1.material",
+      "id": "25198",
+      "name": "Throw object.prefab",
       "userData": {
         "gltfIndex": 0
       },
@@ -82,12 +23,70 @@
       ],
       "subMetas": {}
     },
-    "d5bbb": {
-      "importer": "gltf-scene",
-      "uuid": "2b8488f1-a4e0-41dd-9e2f-c52eb3a1d10d@d5bbb",
+    "e2349": {
+      "importer": "gltf-mesh",
+      "uuid": "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@e2349",
       "displayName": "",
-      "id": "d5bbb",
-      "name": "chicken.prefab",
+      "id": "e2349",
+      "name": "Mesh.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 2314
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d1493": {
+      "importer": "gltf-animation",
+      "uuid": "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@d1493",
+      "displayName": "",
+      "id": "d1493",
+      "name": "throw.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 0,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.8166666626930237
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "438fe": {
+      "importer": "gltf-skeleton",
+      "uuid": "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@438fe",
+      "displayName": "",
+      "id": "438fe",
+      "name": "UnnamedSkeleton.skeleton",
+      "userData": {
+        "gltfIndex": 0,
+        "jointsLength": 20
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5b531": {
+      "importer": "gltf-material",
+      "uuid": "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@5b531",
+      "displayName": "",
+      "id": "5b531",
+      "name": "HandsSkin.material",
       "userData": {
         "gltfIndex": 0
       },
@@ -100,15 +99,26 @@
     }
   },
   "userData": {
-    "imageMetas": [
-      {
-        "name": "file1",
-        "uri": "2b8488f1-a4e0-41dd-9e2f-c52eb3a1d10d@43c71"
-      }
-    ],
+    "imageMetas": [],
     "fbx": {
       "smartMaterialEnabled": true
     },
+    "animationImportSettings": [
+      {
+        "name": "Armature|ArmatureAction",
+        "duration": 0.8166666626930237,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "throw",
+            "from": 0,
+            "to": 0.8166666626930237,
+            "wrapMode": 0,
+            "previousId": "d1493"
+          }
+        ]
+      }
+    ],
     "lods": {
       "enable": false,
       "hasBuiltinLOD": false,
@@ -129,21 +139,21 @@
     },
     "assetFinder": {
       "meshes": [
-        "2b8488f1-a4e0-41dd-9e2f-c52eb3a1d10d@7579e"
+        "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@e2349"
       ],
-      "skeletons": [],
-      "textures": [
-        "2b8488f1-a4e0-41dd-9e2f-c52eb3a1d10d@d20e9"
+      "skeletons": [
+        "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@438fe"
       ],
+      "textures": [],
       "materials": [
-        "2b8488f1-a4e0-41dd-9e2f-c52eb3a1d10d@1c6c3"
+        "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@5b531"
       ],
       "scenes": [
-        "2b8488f1-a4e0-41dd-9e2f-c52eb3a1d10d@d5bbb"
+        "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@25198"
       ]
     },
     "materials": {
-      "2b8488f1-a4e0-41dd-9e2f-c52eb3a1d10d@1c6c3": {
+      "fb7acb23-a8df-43c2-a66c-b7c3ac02d569@5b531": {
         "__type__": "cc.Material",
         "_name": "",
         "_objFlags": 0,
@@ -156,8 +166,8 @@
         "_techIdx": 0,
         "_defines": [
           {
-            "DCC_APP_NAME": 5,
-            "USE_ALBEDO_MAP": true
+            "DCC_APP_NAME": 2,
+            "HAS_EXPORTED_METALLIC": true
           },
           {},
           {},
@@ -203,10 +213,16 @@
         ],
         "_props": [
           {
-            "mainTexture": {
-              "__uuid__": "7c20ae20-499a-4d46-811c-4d9f26899720@6c48a",
-              "__expectedType__": "cc.Texture2D"
-            }
+            "mainColor": {
+              "__type__": "cc.Color",
+              "r": 228,
+              "g": 177,
+              "b": 100,
+              "a": 255
+            },
+            "shininessExponent": 19.99999952104794,
+            "specularFactor": 0.25,
+            "transparencyFactor": 0
           },
           {},
           {},

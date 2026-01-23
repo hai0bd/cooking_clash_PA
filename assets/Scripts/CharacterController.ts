@@ -1,4 +1,4 @@
-import { _decorator, Component, v3, RigidBody, Vec3, Collider, ICollisionEvent, AudioSource, CameraComponent, input, Input, EventTouch, math } from 'cc';
+/* import { _decorator, Component, v3, RigidBody, Vec3, Collider, ICollisionEvent, AudioSource, CameraComponent, input, Input, EventTouch, math } from 'cc';
 const { ccclass, property } = _decorator;
 
 let dtime = 0;
@@ -210,4 +210,4 @@ export class CharacterController extends Component {
         }
         return result;
     }
-}
+} */

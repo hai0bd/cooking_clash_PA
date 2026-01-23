@@ -562,6 +562,7 @@
               "__uuid__": "729386cd-0178-4d08-8c5b-5e8cfb08f524@6c48a",
               "__expectedType__": "cc.Texture2D"
             },
+            "albedoScale": 8,
             "transparencyMap": {
               "__uuid__": "729386cd-0178-4d08-8c5b-5e8cfb08f524@6c48a",
               "__expectedType__": "cc.Texture2D"

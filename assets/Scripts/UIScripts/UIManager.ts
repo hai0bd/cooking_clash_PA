@@ -1,9 +1,16 @@
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Component, Node, Sprite, UIOpacity, UITransform } from 'cc';
+import { GameManager } from '../Core/GameManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('UIManager')
 export class UIManager extends Component {
     private static _instance: UIManager;
+
+    @property(UIOpacity)
+    warningScreen: UIOpacity = null;
+
+    @property(UITransform)
+    canvas: UITransform = null;
 
     public static get instance(): UIManager {
         if (!this._instance) {
@@ -19,12 +26,9 @@ export class UIManager extends Component {
             this.destroy();
         }
     }
-    start() {
 
-    }
-
-    update(deltaTime: number) {
-        
+    start(){
+        console.log(this.canvas.contentSize);
     }
 }
 

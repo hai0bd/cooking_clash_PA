@@ -2,24 +2,24 @@
   "ver": "2.3.13",
   "importer": "fbx",
   "imported": true,
-  "uuid": "617bd0e9-df04-4c2c-ae5b-8a63ac6b877a",
+  "uuid": "773c720d-885d-4b25-9703-bfe508b18fc0",
   "files": [
     "__original-animation-0.cconb"
   ],
   "subMetas": {
-    "96c26": {
+    "cbc2b": {
       "importer": "gltf-animation",
-      "uuid": "617bd0e9-df04-4c2c-ae5b-8a63ac6b877a@96c26",
+      "uuid": "773c720d-885d-4b25-9703-bfe508b18fc0@cbc2b",
       "displayName": "",
-      "id": "96c26",
-      "name": "Drink.animation",
+      "id": "cbc2b",
+      "name": "picked.animation",
       "userData": {
         "gltfIndex": 0,
-        "wrapMode": 1,
+        "wrapMode": 0,
         "sample": 30,
         "span": {
           "from": 0,
-          "to": 2.683333396911621
+          "to": 0.9833333492279053
         },
         "events": []
       },
@@ -30,12 +30,12 @@
       ],
       "subMetas": {}
     },
-    "b8361": {
+    "e24d7": {
       "importer": "gltf-scene",
-      "uuid": "617bd0e9-df04-4c2c-ae5b-8a63ac6b877a@b8361",
+      "uuid": "773c720d-885d-4b25-9703-bfe508b18fc0@e24d7",
       "displayName": "",
-      "id": "b8361",
-      "name": "Drink.prefab",
+      "id": "e24d7",
+      "name": "testAnimHand.prefab",
       "userData": {
         "gltfIndex": 0
       },
@@ -54,16 +54,16 @@
     },
     "animationImportSettings": [
       {
-        "name": "root|root|root|rigAction",
-        "duration": 2.683333396911621,
+        "name": "Scene",
+        "duration": 0.9833333492279053,
         "fps": 30,
         "splits": [
           {
-            "name": "Drink",
+            "name": "picked",
             "from": 0,
-            "to": 2.683333396911621,
-            "wrapMode": 1,
-            "previousId": "96c26"
+            "to": 0.9833333492279053,
+            "wrapMode": 0,
+            "previousId": "cbc2b"
           }
         ]
       }
@@ -92,7 +92,7 @@
       "textures": [],
       "materials": [],
       "scenes": [
-        "617bd0e9-df04-4c2c-ae5b-8a63ac6b877a@b8361"
+        "773c720d-885d-4b25-9703-bfe508b18fc0@e24d7"
       ]
     }
   }
