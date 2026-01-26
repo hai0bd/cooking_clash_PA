@@ -1,4 +1,4 @@
-import { _decorator, Component, systemEvent, SystemEventType, PhysicsSystem, geometry, Camera, Node, Prefab, instantiate, Vec3, tween, BoxCollider, SkeletalAnimation } from 'cc';
+/* import { _decorator, Component, systemEvent, SystemEventType, PhysicsSystem, geometry, Camera, Node, Prefab, instantiate, Vec3, tween, BoxCollider, SkeletalAnimation } from 'cc';
 import { KitchenTool } from './KitchenTool';
 import {ESound,AudioManager } from './AudioManager';
 
@@ -311,4 +311,4 @@ export class ClickHandler extends Component {
             }
         }
     }
-}
+} */

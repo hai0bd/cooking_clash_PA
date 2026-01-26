@@ -1,5 +1,9 @@
 import { _decorator, Component, Node, Sprite, UIOpacity, UITransform } from 'cc';
 import { GameManager } from '../Core/GameManager';
+import { OrderData } from '../Actor/Order/OrderData';
+import { OrderCategory, OrderType } from '../Core/Enum';
+import { PopupOrder } from './PopupOrder';
+import { Order } from '../Actor/Order/OrderService';
 const { ccclass, property } = _decorator;
 
 @ccclass('UIManager')
@@ -11,6 +15,12 @@ export class UIManager extends Component {
 
     @property(UITransform)
     canvas: UITransform = null;
+
+    @property(PopupOrder)
+    popupOrder: PopupOrder = null;
+
+    @property([OrderData])
+    data: OrderData[] = [];
 
     public static get instance(): UIManager {
         if (!this._instance) {
@@ -27,8 +37,21 @@ export class UIManager extends Component {
         }
     }
 
-    start(){
-        console.log(this.canvas.contentSize);
+    customerOrder(order: Order){
+        if(order.category == OrderCategory.THROW){
+            this.popupOrder.orderBoom(order.text)
+        }
+        else{
+            this.popupOrder.orderFood(this.getSpriteFrame(order.type), "x1");
+        }
+    }
+
+    orderCompelete(){
+        this.popupOrder.closed();
+    }
+
+    getSpriteFrame(key: OrderType){
+        return this.data.find(d => d.orderName === key)?.spriteFr ?? null;
     }
 }
 

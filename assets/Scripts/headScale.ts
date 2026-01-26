@@ -1,4 +1,4 @@
-// Thêm Quat vào dòng import
+/* // Thêm Quat vào dòng import
 import { _decorator, Component, Node, Camera, Vec3, Quat } from "cc";
 
 const { ccclass, property } = _decorator;
@@ -53,4 +53,4 @@ export class HeadScale extends Component {
         const value = Math.floor(ratio * 100) / 100;
         this.node.setScale(value, value, 1);
     }
-}
+} */

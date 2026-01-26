@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Prefab, instantiate, Vec3 } from 'cc';
+/* import { _decorator, Component, Node, Prefab, instantiate, Vec3 } from 'cc';
 const { ccclass, property } = _decorator;
 interface SpawnData {
     pos: Vec3;
@@ -72,4 +72,4 @@ export class KitchenTool extends Component {
         }
     }
     update(deltaTime: number) {}
-}
+} */

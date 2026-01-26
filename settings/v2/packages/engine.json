@@ -36,7 +36,7 @@
             "_value": false
           },
           "rich-text": {
-            "_value": true
+            "_value": false
           },
           "mask": {
             "_value": true
@@ -45,10 +45,10 @@
             "_value": true
           },
           "ui-skew": {
-            "_value": true
+            "_value": false
           },
           "affine-transform": {
-            "_value": true
+            "_value": false
           },
           "ui": {
             "_value": true
@@ -58,7 +58,7 @@
           },
           "physics": {
             "_value": false,
-            "_option": "physics-ammo"
+            "_option": "physics-builtin"
           },
           "physics-ammo": {
             "_value": true,
@@ -143,7 +143,7 @@
             "_value": false
           },
           "tiled-map": {
-            "_value": true
+            "_value": false
           },
           "vendor-google": {
             "_value": false
@@ -191,7 +191,6 @@
         "includeModules": [
           "2d",
           "3d",
-          "affine-transform",
           "animation",
           "audio",
           "base",
@@ -203,18 +202,16 @@
           "meshopt",
           "procedural-animation",
           "profiler",
-          "rich-text",
           "skeletal-animation",
-          "tiled-map",
           "tween",
-          "ui",
-          "ui-skew"
+          "ui"
         ],
         "noDeprecatedFeatures": {
           "value": false,
           "version": ""
         }
       }
-    }
+    },
+    "globalConfigKey": "defaultConfig"
   }
 }

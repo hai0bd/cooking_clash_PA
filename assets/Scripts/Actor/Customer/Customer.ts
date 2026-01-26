@@ -3,6 +3,7 @@ import { Order, OrderService } from '../Order/OrderService';
 import { CustomerState, GameState, OrderCategory, OrderType } from '../../Core/Enum';
 import { GameEvent } from '../../Core/Event';
 import { GameManager } from '../../Core/GameManager';
+import { UIManager } from '../../UIScripts/UIManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('Customer')
@@ -44,6 +45,7 @@ export class Customer extends Component {
                     .to(2, { position: orderPoint.getPosition() })
                     .call(() => {
                         GameManager.instance.changeState(GameState.SERVE);
+                        UIManager.instance.customerOrder(this.order);
                         this.changeState(CustomerState.WAITING);
                     })
                     .start();
@@ -52,6 +54,7 @@ export class Customer extends Component {
     }
 
     getOut(exitPoint: Node, destroyPoint: Node): void {
+        UIManager.instance.orderCompelete();
         this.changeState(CustomerState.WALKING);
         director.emit(GameEvent.OPEN_DOOR);
         tween(this.node)

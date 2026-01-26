@@ -1,4 +1,4 @@
-import { _decorator, Camera, Component, EventTouch, geometry, Input, input, MeshRenderer, Node, PhysicsRayResult, PhysicsSystem, SkeletalAnimation, tween, Vec3 } from 'cc';
+import { _decorator, Camera, Component, Enum, EventTouch, geometry, Input, input, MeshRenderer, Node, PhysicsRayResult, PhysicsSystem, SkeletalAnimation, tween, Vec3 } from 'cc';
 import { OrderManager } from './Order/OrderManager';
 import { GameState, OrderCategory } from '../Core/Enum';
 import { GameManager } from '../Core/GameManager';
@@ -7,11 +7,11 @@ const { ccclass, property } = _decorator;
 
 @ccclass('PlayerController')
 export class PlayerController extends Component {
-    @property(Camera)
-    mainCamera: Camera = null;
-
     @property(Node)
-    potCam: Node = null;
+    landscapeCam: Node = null;
+
+    @property(Camera)
+    mainCam: Camera = null;
 
     @property(MeshRenderer)
     targetMesh: MeshRenderer[] = [];
@@ -26,20 +26,26 @@ export class PlayerController extends Component {
     private playerHandler: MeshRenderer = null;
 
     start() {
-        input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
-        if(isPortrait()){
-            this.mainCamera.node.setPosition(this.potCam.getPosition());
-            this.mainCamera.node.setRotation(this.potCam.getRotation());
-            this.mainCamera.fov = 130;
+        // input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
+        input.on(Input.EventType.TOUCH_END, this.onTouchStart, this);
+        // input.on(Input.EventType.TOUCH_CANCEL, this.onTouchStart, this);
+        if(!isPortrait()){
+            /* this.landscapeCam.node.setPosition(this.portraitCam.getPosition());
+            this.landscapeCam.node.setRotation(this.portraitCam.getRotation());
+            this.landscapeCam.fov = 130; */
+            this.mainCam.node.setPosition(this.landscapeCam.getPosition());
+            this.mainCam.node.setRotation(this.landscapeCam.getRotation());
+            this.mainCam.fov = 71;
         }
     }
 
     onTouchStart(event: EventTouch): void {
         if (GameManager.instance.isState(GameState.SERVE)) {
             const touchPos = event.getLocation();
-            this.mainCamera.screenPointToRay(touchPos.x, touchPos.y, this.ray);
+            this.mainCam.screenPointToRay(touchPos.x, touchPos.y, this.ray);
 
-            this.targetMesh.forEach(mesh => {
+            for(const mesh of this.targetMesh){
+            // this.targetMesh.forEach(mesh => {
                 if (mesh && mesh.model) {
                     const boundingBox = mesh.model.worldBounds;
 
@@ -47,7 +53,7 @@ export class PlayerController extends Component {
                         const orderType = mesh.node.layer;
                         // check food == customer order?
                         const category = OrderManager.instance.verifyOrder(orderType, mesh.node);
-                        if (category) {
+                        if (category != null) {
                             // check category food:
                             // #drink: dua luon
                             if (category == OrderCategory.DRINK) this.moveToTarget(this.customerNode, mesh.node, this.handAnim.node);
@@ -62,8 +68,10 @@ export class PlayerController extends Component {
                                 this.handAnim.play("throw");
                             }
                             else {
-
+                                console.log("error anim");
+                                this.moveToTarget(this.customerNode, mesh.node, this.handAnim.node)
                             }
+                            console.log(category);
                         }
 
                         //xu li va cham
@@ -74,9 +82,10 @@ export class PlayerController extends Component {
                         else {
                             this.playerHandler = mesh;
                         }
+                        break;
                     }
                 }
-            });
+            }
 
         }
     }

@@ -3,6 +3,7 @@ import { Customer } from './Customer';
 import { CustomerState, GameState, Point } from '../../Core/Enum';
 import { GameManager } from '../../Core/GameManager';
 import { OrderManager } from '../Order/OrderManager';
+import { UIManager } from '../../UIScripts/UIManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('CustomerSpawner')
@@ -48,6 +49,7 @@ export class CustomerSpawner extends Component {
             }
             else {
                 GameManager.instance.changeState(GameState.SERVE)
+                UIManager.instance.customerOrder(this.customer.order);
                 this.customer.changeState(CustomerState.WAITING);
             }
 

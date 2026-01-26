@@ -1,6 +1,6 @@
-import {_decorator, Component, size, UITransform, view,} from "cc";
+import { _decorator, Component, screen, size, UITransform, view, } from "cc";
 
-const {ccclass, property} = _decorator;
+const { ccclass, property } = _decorator;
 
 @ccclass("responsive")
 export class responsive extends Component {
@@ -30,14 +30,22 @@ export class responsive extends Component {
             );
         }
     }
+    protected onDestroy(): void {
+        view.off("canvas-resize", this.updatecanvas, this);
+    }
 }
 
-export function isPortrait (): boolean {
-    const canvas = view.getDesignResolutionSize();
-        let deviceResolution = view.getResolutionPolicy();
-        let designRatio = canvas.width / canvas.height;
-        let deviceRatio =
-            deviceResolution.canvasSize.width /
-            deviceResolution.canvasSize.height;
-        return deviceRatio < designRatio;
+export function isPortrait(): boolean {
+    const size = screen.windowSize;
+    return size.width < size.height;
+    /* const canvas = view.getDesignResolutionSize();
+    let deviceResolution = view.getResolutionPolicy();
+    let designRatio = canvas.width / canvas.height;
+    let deviceRatio =
+        deviceResolution.canvasSize.width /
+        deviceResolution.canvasSize.height;
+    console.log(deviceRatio);
+    if (deviceRatio < 1) console.log("Portrait");
+    else console.log("Landscape");
+    return deviceRatio < 1; */
 }

@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, v3 } from 'cc';
+/* import { _decorator, Component, Node, v3 } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('HieuungPhucTap')
@@ -39,4 +39,4 @@ export class HieuungPhucTap extends Component {
 
         this.node.setScale(scaleX, scaleY);
     }
-}
+} */

@@ -1,4 +1,4 @@
-import { _decorator } from 'cc';
+import { _decorator, SpriteFrame } from 'cc';
 import { OrderCategory, OrderType } from '../../Core/Enum';
 
 export class OrderService {

@@ -1,4 +1,4 @@
-import { _decorator, Component, Game, Node } from 'cc';
+import { _decorator, Component, Enum, Game, Node } from 'cc';
 import { Order, OrderService } from './OrderService';
 import { GameManager } from '../../Core/GameManager';
 import { Customer } from '../Customer/Customer';

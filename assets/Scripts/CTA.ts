@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Input, input, Size, screen, EventTouch, Vec3, UITransform } from 'cc';
+/* import { _decorator, Component, Node, Input, input, Size, screen, EventTouch, Vec3, UITransform } from 'cc';
 import super_html_playable from './super_html/super_html_playable';
 import { ESound,AudioManager } from './AudioManager';
 
@@ -47,4 +47,4 @@ export class TouchCanvas extends Component {
         window.gameEnd && window.gameEnd();
         super_html_playable.download();
     }
-}
+} */

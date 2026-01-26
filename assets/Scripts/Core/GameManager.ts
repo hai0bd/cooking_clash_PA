@@ -10,8 +10,8 @@ const { ccclass, property } = _decorator;
 export class GameManager extends Component {
     private static _instance: GameManager;
 
-    @property(CameraShake)
-    mainCamera: CameraShake = null;
+    /* @property(CameraShake)
+    mainCamera: CameraShake = null; */
 
     @property(CustomerSpawner)
     customerSpawner: CustomerSpawner = null;
@@ -53,6 +53,9 @@ export class GameManager extends Component {
 
         switch(newState){
             case GameState.START:
+                break;
+            case GameState.SERVE:
+                // OrderManager.instance.
                 break;
             case GameState.WAIT_NEXT_CUSTOMER:
                 break;
