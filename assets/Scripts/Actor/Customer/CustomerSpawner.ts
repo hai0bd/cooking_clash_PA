@@ -15,7 +15,7 @@ export class CustomerSpawner extends Component {
     private customerPrefab: Prefab[] = [];
 
     private listPoint: Node[] = [];
-    private customerIndex: number = 1;
+    private customerIndex: number = 2;
     private customer: Customer | null = null;
 
     init(listPoint: Node[]) {
@@ -38,7 +38,7 @@ export class CustomerSpawner extends Component {
         if (this.customerIndex % 2 == 0) isTrouble = true;
 
         if (this.customer) {
-            const targetPoint = this.customerIndex == 1 ? Point.OrderPoint : Point.SpawnPoint;
+            const targetPoint = this.customerIndex == 2 ? Point.OrderPoint : Point.SpawnPoint;
             const pos = this.listPoint[targetPoint].position;
             const rot = this.listPoint[targetPoint].rotation;
             this.customer.init(this.node, pos, rot, isTrouble);
@@ -54,6 +54,7 @@ export class CustomerSpawner extends Component {
             }
 
             OrderManager.instance.customer = this.customer;
+            UIManager.instance.setBubbleTarget(customerNode);
         }
     }
 }

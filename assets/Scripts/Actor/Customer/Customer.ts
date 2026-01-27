@@ -54,7 +54,7 @@ export class Customer extends Component {
     }
 
     getOut(exitPoint: Node, destroyPoint: Node): void {
-        UIManager.instance.orderCompelete();
+        // UIManager.instance.orderCompelete();
         this.changeState(CustomerState.WALKING);
         director.emit(GameEvent.OPEN_DOOR);
         tween(this.node)
@@ -88,6 +88,7 @@ export class Customer extends Component {
                 break;
             case CustomerState.WAITING:
                 // this.anim.play("Waiting");
+                this.brain.startOrder();
                 break;
             case CustomerState.HAPPY:
                 this.anim.play("Good");
@@ -101,6 +102,17 @@ export class Customer extends Component {
             case CustomerState.EATING:
                 // this.anim.play("Eating");
                 // this.changeState("Happy");
+                if(node){
+                    this.handItem = instantiate(node);
+                    this.handItem.setPosition(new Vec3(-0.025, 0.08, -0.05));
+                    this.handItem.setRotationFromEuler(new Vec3(0, 0, -90));
+                    this.hand.addChild(this.handItem);
+                }
+                this.anim.play("Drink");
+                this.anim.once(SkeletalAnimation.EventType.FINISHED, () => {
+                    this.handItem.destroy();
+                    this.changeState(CustomerState.HAPPY)
+                }, this);
                 break;
             case CustomerState.DRINKING:
                 if(node){
@@ -128,12 +140,14 @@ export class Customer extends Component {
 
 abstract class CustomerLogic {
     abstract execute(customer: Customer): void;
+    abstract startOrder(): void;
 }
 
 class NormalCustomer extends CustomerLogic {
     execute(customer: Customer): void {
         customer.order = customer.orderService.getRandomOrder();
     }
+    startOrder(){}
 }
 
 class TroubleCustomer extends CustomerLogic {
@@ -141,7 +155,10 @@ class TroubleCustomer extends CustomerLogic {
         customer.order = {
             category: OrderCategory.THROW,
             type: OrderType.BOMB,
-            text: "BOMB"
+            text: customer.orderService.getRandomLine(OrderType.BOMB)
         };
+    }
+    startOrder(){
+        director.emit(GameEvent.CAMERA_SHAKE);
     }
 }

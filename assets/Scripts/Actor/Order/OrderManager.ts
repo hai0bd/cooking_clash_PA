@@ -3,6 +3,7 @@ import { Order, OrderService } from './OrderService';
 import { GameManager } from '../../Core/GameManager';
 import { Customer } from '../Customer/Customer';
 import { CustomerState, GameState, OrderCategory, OrderType, Point } from '../../Core/Enum';
+import { UIManager } from '../../UIScripts/UIManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('OrderManager')
@@ -53,9 +54,13 @@ export class OrderManager extends Component {
 
     public serveOrder(order: Order, node?: Node) {
         console.log("customer eating");
+        UIManager.instance.orderCompelete();
         // GameManager.instance.changeState(GameState.WAIT_NEXT_CUSTOMER);
-        if (this.customer.order.category == OrderCategory.DRINK)
+        if (this.customer.order.category == OrderCategory.DRINK || this.customer.order.category == OrderCategory.EAT)
             this.customer.changeState(CustomerState.DRINKING, node);
+        else{
+            
+        }
         setTimeout(() => {
             this.customer?.getOut(this.listPoint[Point.ExitPoint], this.listPoint[Point.DestroyPoint]);
             // UIManager.instance.updateScore(10);

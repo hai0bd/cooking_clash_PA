@@ -33,22 +33,28 @@ export class PopupOrder extends Component {
     @property(UIOpacity)
     private warningScreen: UIOpacity = null;
 
-    orderFood(spriteFr: SpriteFrame, amount: string) {
-        this.openPopup(false);
-        this.bounceNode(Vec3.ZERO, Vec3.ONE, this.popupBG.node, this.foodSprite.node, this.foodAmount.node)
+    private _isClose: boolean = true;
 
-        this.popupBG.spriteFrame = this.bgFood;
-        this.foodSprite.spriteFrame = spriteFr;
-        this.foodAmount.string = amount;
-        this.countdown(10);
+    orderFood(spriteFr: SpriteFrame, amount: string) {
+        if (this._isClose) {
+            this.openPopup(false);
+            this.bounceNode(Vec3.ZERO, Vec3.ONE, this.popupBG.node, this.foodSprite.node, this.foodAmount.node)
+
+            this.popupBG.spriteFrame = this.bgFood;
+            this.foodSprite.spriteFrame = spriteFr;
+            this.foodAmount.string = amount;
+            this.countdown(10);
+        }
     }
 
     orderBoom(lines: string) {
-        this.openPopup(true);
-        this.bounceNode(Vec3.ZERO, Vec3.ONE, this.popupBG.node);
+        if (this._isClose) {
+            this.openPopup(true);
+            this.bounceNode(Vec3.ZERO, Vec3.ONE, this.popupBG.node);
 
-        this.popupBG.spriteFrame = this.bgBoom;
-        this.troubleCusLabel.string = lines;
+            this.popupBG.spriteFrame = this.bgBoom;
+            this.troubleCusLabel.string = lines;
+        }
     }
 
     countdown(time: number) {
@@ -61,6 +67,7 @@ export class PopupOrder extends Component {
                 tween(this.remainingTime)
                     .to(time * 0.3, { fillRange: 0 })
                     .call(() => {
+                        this.closed();
                         flashWarn.stop();
                         this.warningScreen.node.active = false;
                     })
@@ -80,19 +87,24 @@ export class PopupOrder extends Component {
     }
 
     openPopup(isBoom: boolean) {
+        this._isClose = false;
         this.foodNode.active = !isBoom;
         this.boomNode.active = isBoom;
         this.popupBG.node.active = true;
     }
 
     closed() {
-        const startScale = 1;
-        const endScale = 0;
-        this.popupBG.node.setScale(new Vec3(startScale, startScale, startScale));
-        tween(this.popupBG.node)
-            .to(1, { scale: new Vec3(endScale, endScale, endScale) }, { easing: 'backIn' })
-            .call(() => { this.popupBG.node.active = false; })
-            .start();
+        if (!this._isClose) {
+            this._isClose = true;
+            const startScale = 1;
+            const endScale = 0;
+
+            this.popupBG.node.setScale(new Vec3(startScale, startScale, startScale));
+            tween(this.popupBG.node)
+                .to(1, { scale: new Vec3(endScale, endScale, endScale) }, { easing: 'backIn' })
+                .call(() => { this.popupBG.node.active = false; })
+                .start();
+        }
     }
 
     bounceNode(startScale: Vec3, endScale: Vec3, ...nodes: Node[]) {

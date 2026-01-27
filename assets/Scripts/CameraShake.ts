@@ -5,6 +5,9 @@ const { ccclass, property } = _decorator;
 
 @ccclass('CameraShake')
 export class CameraShake extends Component {
+    @property({tooltip: "Số lần rung liên tiếp"})
+    times: number = 2;
+
     @property({ tooltip: "Độ lệch tối đa" })
     strength: number = 10;
 
@@ -20,7 +23,7 @@ export class CameraShake extends Component {
     private warningScreen: UIOpacity = null;
     private flashTween: Tween<UIOpacity> = null;
 
-    start() {
+    onLoad() {
         this.warningScreen = UIManager.instance.warningScreen;
         director.on(GameEvent.CAMERA_SHAKE, this.shake, this);
     }
@@ -78,5 +81,11 @@ export class CameraShake extends Component {
         this.flashTween.stop();
         this.flashTween = null;
         this.node.setPosition(this._originPos);
+        this.times--;
+        if(this.times >= 0) this.shake();
+    }
+
+    onDestroy() {
+        director.off(GameEvent.CAMERA_SHAKE);
     }
 }

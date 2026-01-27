@@ -55,7 +55,8 @@
           "from": 0,
           "to": 0.8166666626930237
         },
-        "events": []
+        "events": [],
+        "speed": 0.7
       },
       "ver": "1.0.17",
       "imported": true,
@@ -114,7 +115,8 @@
             "from": 0,
             "to": 0.8166666626930237,
             "wrapMode": 0,
-            "previousId": "d1493"
+            "previousId": "d1493",
+            "speed": 0.7
           }
         ]
       }

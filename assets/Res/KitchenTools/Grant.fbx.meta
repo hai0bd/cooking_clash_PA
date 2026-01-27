@@ -37,7 +37,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": false,
-        "imageUuidOrDatabaseUri": "db://assets/Res/Grant_BaseColor.png"
+        "imageUuidOrDatabaseUri": "db://assets/Res/KitchenTools/Grant_BaseColor.png"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -67,7 +67,7 @@
     "imageMetas": [
       {
         "name": "base_color_texture",
-        "uri": "db://assets/Res/Grant_BaseColor.png"
+        "uri": "db://assets/Res/KitchenTools/Grant_BaseColor.png"
       }
     ],
     "fbx": {
@@ -100,7 +100,7 @@
         "ea306d3f-4c24-439b-ac32-8f354fdc1f56@7d6ab"
       ],
       "materials": [
-        "d4a82b76-72e4-4f6a-9a91-c3374bfaa019"
+        "fd24292e-ec33-4b95-984a-ac3c96588d92"
       ],
       "scenes": [
         "ea306d3f-4c24-439b-ac32-8f354fdc1f56@4c9ce"

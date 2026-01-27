@@ -1,9 +1,9 @@
 import { _decorator, Component, Node, Sprite, UIOpacity, UITransform } from 'cc';
-import { GameManager } from '../Core/GameManager';
 import { OrderData } from '../Actor/Order/OrderData';
 import { OrderCategory, OrderType } from '../Core/Enum';
 import { PopupOrder } from './PopupOrder';
 import { Order } from '../Actor/Order/OrderService';
+import { SpeechBubble } from './SpeechBubble';
 const { ccclass, property } = _decorator;
 
 @ccclass('UIManager')
@@ -18,6 +18,9 @@ export class UIManager extends Component {
 
     @property(PopupOrder)
     popupOrder: PopupOrder = null;
+
+    @property(SpeechBubble)
+    speechBubble: SpeechBubble = null;
 
     @property([OrderData])
     data: OrderData[] = [];
@@ -35,6 +38,10 @@ export class UIManager extends Component {
         } else {
             this.destroy();
         }
+    }
+
+    setBubbleTarget(node: Node){
+        this.speechBubble.targetNode = node;
     }
 
     customerOrder(order: Order){
