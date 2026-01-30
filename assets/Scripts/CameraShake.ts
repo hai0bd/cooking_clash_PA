@@ -17,7 +17,8 @@ export class CameraShake extends Component {
     @property({ tooltip: "Số lần dao động" })
     vibrato: number = 10;
 
-    private _originPos: Vec3 = v3();
+    private _times: number = 0;
+    private _originPos: Vec3 = new Vec3();
     private _elapsed: number = 0;
     private _isShaking: boolean = false;
     private warningScreen: UIOpacity = null;
@@ -81,8 +82,9 @@ export class CameraShake extends Component {
         this.flashTween.stop();
         this.flashTween = null;
         this.node.setPosition(this._originPos);
-        this.times--;
-        if(this.times >= 0) this.shake();
+        this._times++;
+        if(this._times <= this.times) this.shake();
+        else this._times = 0;
     }
 
     onDestroy() {

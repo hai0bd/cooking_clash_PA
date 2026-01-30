@@ -170,10 +170,10 @@
       "uuid": "b416ae0f-2e11-4bb0-a711-4bc22ec1fc3b@5b2a8",
       "displayName": "",
       "id": "5b2a8",
-      "name": "root|rigAction.animation",
+      "name": "disapoint.animation",
       "userData": {
         "gltfIndex": 0,
-        "wrapMode": 2,
+        "wrapMode": 1,
         "sample": 30,
         "span": {
           "from": 0,
@@ -396,10 +396,10 @@
         "fps": 30,
         "splits": [
           {
-            "name": "root|rigAction",
+            "name": "disapoint",
             "from": 0,
             "to": 2.9833333492279053,
-            "wrapMode": 2,
+            "wrapMode": 1,
             "previousId": "5b2a8"
           }
         ]

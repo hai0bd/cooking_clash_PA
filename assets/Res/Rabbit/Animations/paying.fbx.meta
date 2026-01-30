@@ -154,10 +154,10 @@
       "uuid": "ef07bad9-03ef-48a1-bd97-f8b9dbf9e0fd@5b2a8",
       "displayName": "",
       "id": "5b2a8",
-      "name": "root|rigAction.animation",
+      "name": "paying.animation",
       "userData": {
         "gltfIndex": 0,
-        "wrapMode": 2,
+        "wrapMode": 1,
         "sample": 30,
         "span": {
           "from": 0,
@@ -356,10 +356,10 @@
         "fps": 30,
         "splits": [
           {
-            "name": "root|rigAction",
+            "name": "paying",
             "from": 0,
             "to": 0.9833333492279053,
-            "wrapMode": 2,
+            "wrapMode": 1,
             "previousId": "5b2a8"
           }
         ]

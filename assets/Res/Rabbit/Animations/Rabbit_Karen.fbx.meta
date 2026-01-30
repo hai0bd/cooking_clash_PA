@@ -154,13 +154,13 @@
       "uuid": "f2fa1383-6222-41d2-a1a1-2ef48ad00dbc@f4844",
       "displayName": "",
       "id": "f4844",
-      "name": "root|Rabbit_Karen.animation",
+      "name": "karma_talk.animation",
       "userData": {
         "gltfIndex": 0,
         "wrapMode": 2,
         "sample": 30,
         "span": {
-          "from": 0,
+          "from": 1.1,
           "to": 8.75
         },
         "events": []
@@ -396,8 +396,8 @@
         "fps": 30,
         "splits": [
           {
-            "name": "root|Rabbit_Karen",
-            "from": 0,
+            "name": "karma_talk",
+            "from": 1.1,
             "to": 8.75,
             "wrapMode": 2,
             "previousId": "f4844"

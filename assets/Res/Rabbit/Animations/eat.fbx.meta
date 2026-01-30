@@ -154,10 +154,10 @@
       "uuid": "23df2662-37d7-489f-a059-ac7c767a8a93@5b2a8",
       "displayName": "",
       "id": "5b2a8",
-      "name": "root|rigAction.animation",
+      "name": "eat.animation",
       "userData": {
         "gltfIndex": 0,
-        "wrapMode": 2,
+        "wrapMode": 1,
         "sample": 30,
         "span": {
           "from": 0,
@@ -396,10 +396,10 @@
         "fps": 30,
         "splits": [
           {
-            "name": "root|rigAction",
+            "name": "eat",
             "from": 0,
             "to": 3.6500000953674316,
-            "wrapMode": 2,
+            "wrapMode": 1,
             "previousId": "5b2a8"
           }
         ]

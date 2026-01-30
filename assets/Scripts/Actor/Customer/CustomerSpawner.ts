@@ -4,6 +4,7 @@ import { CustomerState, GameState, Point } from '../../Core/Enum';
 import { GameManager } from '../../Core/GameManager';
 import { OrderManager } from '../Order/OrderManager';
 import { UIManager } from '../../UIScripts/UIManager';
+import { CoinEffect } from '../../CoinEffect';
 const { ccclass, property } = _decorator;
 
 @ccclass('CustomerSpawner')
@@ -14,8 +15,11 @@ export class CustomerSpawner extends Component {
     @property(Prefab)
     private customerPrefab: Prefab[] = [];
 
+    @property(CoinEffect)
+    coin: CoinEffect = null;
+
     private listPoint: Node[] = [];
-    private customerIndex: number = 2;
+    private customerIndex: number = 1;
     private customer: Customer | null = null;
 
     init(listPoint: Node[]) {
@@ -38,19 +42,19 @@ export class CustomerSpawner extends Component {
         if (this.customerIndex % 2 == 0) isTrouble = true;
 
         if (this.customer) {
-            const targetPoint = this.customerIndex == 2 ? Point.OrderPoint : Point.SpawnPoint;
+            const targetPoint = this.customerIndex == 1 ? Point.OrderPoint : Point.SpawnPoint;
             const pos = this.listPoint[targetPoint].position;
             const rot = this.listPoint[targetPoint].rotation;
             this.customer.init(this.node, pos, rot, isTrouble);
+            this.customer.coin = this.coin;
 
             if (targetPoint === Point.SpawnPoint) {
-                //customer move to mid point and then to order point
                 this.customer.getIn(this.listPoint[Point.MidPoint], this.listPoint[Point.OrderPoint]);
             }
             else {
                 GameManager.instance.changeState(GameState.SERVE)
                 UIManager.instance.customerOrder(this.customer.order);
-                this.customer.changeState(CustomerState.WAITING);
+                this.customer.changeState(CustomerState.ORDER);
             }
 
             OrderManager.instance.customer = this.customer;

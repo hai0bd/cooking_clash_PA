@@ -1,0 +1,11 @@
+1 UI tiền bay
+giảm speed thỏ
+1 thêm anim
+thêm character
+thêm anim tay
+thêm hiệu ứng (boom, lửa, ...)
+1 làm kịp => khách happy
+0.5 làm không kịp => khách angry, phá quán => ném boom 
+chỉnh camera
+thêm tut
+thêm công thức

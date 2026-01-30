@@ -1,6 +1,6 @@
-import { _decorator, Component, Node, Sprite, UIOpacity, UITransform } from 'cc';
+import { _decorator, Component, Label, Node, Sprite, tween, UIOpacity, UITransform } from 'cc';
 import { OrderData } from '../Actor/Order/OrderData';
-import { OrderCategory, OrderType } from '../Core/Enum';
+import { OrderCategory, OrderName, OrderType } from '../Core/Enum';
 import { PopupOrder } from './PopupOrder';
 import { Order } from '../Actor/Order/OrderService';
 import { SpeechBubble } from './SpeechBubble';
@@ -25,6 +25,9 @@ export class UIManager extends Component {
     @property([OrderData])
     data: OrderData[] = [];
 
+    @property(Label)
+    coinAmount: Label = null;
+
     public static get instance(): UIManager {
         if (!this._instance) {
             this._instance = new UIManager;
@@ -40,24 +43,48 @@ export class UIManager extends Component {
         }
     }
 
-    setBubbleTarget(node: Node){
+    addCoin(score: number) {
+        const currentScore = Number(this.coinAmount.string);
+        /* for (let i = 1; i <= score; i++) {
+            this.coinAmount.string = (currentScore + i).toString();
+            this.scheduleOnce(() => { }, 0.5);
+        } */
+        let i = 1;
+        const baseScale = this.coinAmount.node.scale.clone();
+        this.schedule(() => {
+            tween(this.coinAmount.node)
+                .to(0.08, { scale: baseScale.clone().multiplyScalar((i * 0.2) + 1) })
+                .to(0.05, { scale: baseScale })
+                .union()
+                .start();
+            this.coinAmount.string = (currentScore + i).toString();
+            i++;
+        }, 0.1, score - 1);
+    }
+
+    setBubbleTarget(node: Node) {
         this.speechBubble.targetNode = node;
     }
 
-    customerOrder(order: Order){
-        if(order.category == OrderCategory.THROW){
+    visibleStore() {
+        this.speechBubble.enabled = false;
+    }
+
+
+    customerOrder(order: Order) {
+        if (order.category == OrderCategory.THROW) {
             this.popupOrder.orderBoom(order.text)
         }
-        else{
-            this.popupOrder.orderFood(this.getSpriteFrame(order.type), "x1");
+        else {
+            this.popupOrder.orderFood(this.getSpriteFrame(order.name), "x1");
         }
     }
 
-    orderCompelete(){
+    orderComplete() {
         this.popupOrder.closed();
     }
 
-    getSpriteFrame(key: OrderType){
+    getSpriteFrame(key: OrderName) {
         return this.data.find(d => d.orderName === key)?.spriteFr ?? null;
     }
 }

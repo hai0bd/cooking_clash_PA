@@ -1,4 +1,7 @@
 import { _decorator, Component, easing, Label, Node, Sprite, SpriteFrame, tween, UIOpacity, Vec3 } from 'cc';
+import { GameManager } from '../Core/GameManager';
+import { GameState } from '../Core/Enum';
+import { OrderManager } from '../Actor/Order/OrderManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('PopupOrder')
@@ -70,6 +73,8 @@ export class PopupOrder extends Component {
                         this.closed();
                         flashWarn.stop();
                         this.warningScreen.node.active = false;
+                        GameManager.instance.changeState(GameState.TIME_OUT);
+                        OrderManager.instance.orderFailed();
                     })
                     .start();
             })

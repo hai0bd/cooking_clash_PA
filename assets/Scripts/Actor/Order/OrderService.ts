@@ -1,44 +1,44 @@
 import { _decorator, SpriteFrame } from 'cc';
-import { OrderCategory, OrderType } from '../../Core/Enum';
+import { OrderCategory, OrderName, OrderType } from '../../Core/Enum';
 
 export class OrderService {
     getRandomOrder(): Order {
-        const type = this.getRandomType();
-        const category = this.getCategory(type);
-        const text = this.getRandomLine(type);
+        // const name = this.getRandomName();
+        const name = OrderName.SANDWICH;
+        const category = this.getCategory(name);
+        const text = this.getRandomLine(name);
 
-        return { category, type, text };
+        return { category, name: name, text };
     }
 
-    getCategory(orderType: OrderType) : OrderCategory{
-        if(orderType == OrderType.COFFEE) return OrderCategory.DRINK;
-        else if(orderType == OrderType.BOMB) return OrderCategory.THROW
+    getCategory(orderName: OrderName) : OrderCategory{
+        if(orderName == OrderName.COFFEE) return OrderCategory.DRINK;
+        else if(orderName == OrderName.BOMB) return OrderCategory.THROW
         return OrderCategory.EAT;
     }
 
-    getRandomType(): OrderType {
-        const RandomStates = [OrderType.COFFEE, OrderType.BEEFSTEAK, OrderType.SALAD, OrderType.SANDWICH];
+    getRandomName(): OrderName {
+        const RandomStates = [OrderName.COFFEE, OrderName.BEEFSTEAK, OrderName.SALAD, OrderName.SANDWICH, OrderName.CHICKEN];
         return RandomStates[Math.floor(Math.random() * RandomStates.length)];
     }
 
-    getRandomLine(type: OrderType): string {
-        const lines = OrderLines[type];
+    getRandomLine(name: OrderName): string {
+        const lines = OrderLines[name];
         return lines[Math.floor(Math.random() * lines.length)];
     }
 }
 
 export interface Order {
     category: OrderCategory;
-    type: OrderType;
+    name: OrderName;
     text: string;
 }
 
-export const OrderLines: Record<OrderType, string[]> = {
-    [OrderType.COFFEE]: ["Coffee", "Water"],
-    [OrderType.BEEFSTEAK]: ["Beef", "Salt", "Pepper"],
-    [OrderType.SALAD]: ["Lettuce", "Tomato", "Cucumber"],
-    [OrderType.SANDWICH]: ["Bread", "Ham", "Cheese"],
-    [OrderType.CHICKEN]: ["Chicken"],
-    [OrderType.CHIPS]: ["Chip"],
-    [OrderType.BOMB]: ["Boom!", "Explosion!"]
+export const OrderLines: Record<OrderName, string[]> = {
+    [OrderName.COFFEE]: ["Coffee", "Water"],
+    [OrderName.BEEFSTEAK]: ["Beef", "Salt", "Pepper"],
+    [OrderName.SALAD]: ["Lettuce", "Tomato", "Cucumber"],
+    [OrderName.SANDWICH]: ["Bread", "Ham", "Cheese"],
+    [OrderName.CHICKEN]: ["Chicken"],
+    [OrderName.BOMB]: ["Boom!", "Explosion!"]
 };

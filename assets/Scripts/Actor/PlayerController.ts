@@ -1,6 +1,6 @@
 import { _decorator, Camera, Component, Enum, EventTouch, geometry, Input, input, instantiate, MeshRenderer, Node, PhysicsRayResult, PhysicsSystem, Quat, SkeletalAnimation, tween, Vec3 } from 'cc';
 import { OrderManager } from './Order/OrderManager';
-import { GameState, OrderCategory } from '../Core/Enum';
+import { GameState, OrderCategory, OrderType } from '../Core/Enum';
 import { GameManager } from '../Core/GameManager';
 import { isPortrait } from '../UIScripts/responsive';
 const { ccclass, property } = _decorator;
@@ -20,13 +20,17 @@ export class PlayerController extends Component {
     handAnim: SkeletalAnimation = null;
 
     @property(Node)
-    handSocket: Node = null;
+    cuttingBoard: Node = null;
 
     @property(Node)
-    customerNode: Node = null;
+    handSocket: Node = null;
+
+    /* @property(Node)
+    customerNode: Node = null; */
 
     private ray: geometry.Ray = new geometry.Ray();
     private playerHandler: MeshRenderer = null;
+    // private startHandPos: Vec3/*  = this.handAnim.node.getWorldPosition().clone() */;
 
     onLoad() {
         // input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
@@ -40,56 +44,81 @@ export class PlayerController extends Component {
     }
 
     onTouchStart(event: EventTouch): void {
-        if (GameManager.instance.isState(GameState.SERVE)) {
-            const touchPos = event.getLocation();
-            this.mainCam.screenPointToRay(touchPos.x, touchPos.y, this.ray);
+        if (!GameManager.instance.isState(GameState.SERVE)) return;
+        const touchPos = event.getLocation();
+        this.mainCam.screenPointToRay(touchPos.x, touchPos.y, this.ray);
 
-            for (const mesh of this.targetMesh) {
-                // this.targetMesh.forEach(mesh => {
-                if (mesh && mesh.model) {
-                    const boundingBox = mesh.model.worldBounds;
+        for (const mesh of this.targetMesh) {
+            // this.targetMesh.forEach(mesh => {
+            if (mesh && mesh.model) {
+                const boundingBox = mesh.model.worldBounds;
 
-                    if (geometry.intersect.rayAABB(this.ray, boundingBox)) {
-                        const orderType = mesh.node.layer;
-                        // check food == customer order?
-                        const category = OrderManager.instance.verifyOrder(orderType, mesh.node);
-                        if (category != null) {
-                            // check category food:
-                            // #drink: dua luon
-                            if (category == OrderCategory.DRINK)
-                                this.moveToTarget(this.customerNode, mesh.node, this.handAnim.node);
-                            // #eat: dat ra dia
-                            else if (category == OrderCategory.EAT) {
-                                this.moveToTarget(this.customerNode, mesh.node, this.handAnim.node);
-                            }
-                            // #throw: tween nem ra
-                            else if (category == OrderCategory.THROW) {
-                                this.throwToTarget(mesh.node);
-                            }
-                        }
-
-                        //xu li va cham
-                        if (this.playerHandler === mesh) {
-                            this.playerHandler = null;
-                            // GameManager.instance.serveOrder(orderType);
-                        }
-                        else {
-                            this.playerHandler = mesh;
-                        }
-                        break;
+                if (geometry.intersect.rayAABB(this.ray, boundingBox)) {
+                    const orderType = mesh.node.layer;
+                    const checkAction = OrderManager.instance.checkAction(orderType, mesh.node);
+                    if (checkAction) {
+                        // this.moveToIngredient(mesh.node);
+                        // displayFood();
                     }
+                    /* const category = OrderManager.instance.verifyOrder(orderType, mesh.node);
+                    if (category != null) {
+                        // check category food:
+                        // #drink: dua luon
+                        if (category == OrderCategory.DRINK)
+                            this.moveToTarget(this.customerNode, mesh.node, this.handAnim.node);
+                        // #eat: dat ra dia
+                        else if (category == OrderCategory.EAT) {
+                            this.moveToTarget(this.customerNode, mesh.node, this.handAnim.node);
+                        }
+                        // #throw: tween nem ra
+                        else if (category == OrderCategory.THROW) {
+                            this.throwToTarget(mesh.node);
+                        }
+                    } */
+                    break;
                 }
             }
-
         }
     }
+    private startHandPos: Vec3;
+    moveToIngredient(node: Node) {
+        const hand = this.handAnim.node;
+        this.startHandPos = this.handAnim.node.getPosition().clone();
 
-    moveToTarget(target: Node, food: Node, playerHand: Node): void {
+        hand.active = true;
+        hand.setPosition(this.startHandPos);
+        tween(hand)
+            .to(.5, { worldPosition: node.getWorldPosition() })
+            .call(() => {
+                this.handAnim.play("picked");
+                this.handAnim.once(SkeletalAnimation.EventType.FINISHED, () => {
+                    this.takeIngredient(node);
+                    /* tween(node)
+                        .to(1, { worldPosition: this.cuttingBoard.getWorldPosition() })
+                        .start(); */
+                });
+            })
+            .start();
+
+    }
+
+    takeIngredient(ingredient: Node) {
+        const cloneIngredient = instantiate(ingredient);
+        const quat = ingredient.getWorldRotation();
+        cloneIngredient.setParent(this.handSocket);
+        cloneIngredient.setWorldRotation(quat);
+        tween(this.handAnim.node)
+            .to(0.5, { worldPosition: this.cuttingBoard.getWorldPosition() })
+            .start();
+    }
+
+    /* moveToTarget(target: Node, food: Node, playerHand: Node): void {
         const targetPos = target.getWorldPosition();
         const foodPos = food.getWorldPosition();
-        this.handAnim.play("picked");
+        playerHand.active = true;
         playerHand.setParent(food);
         playerHand.setWorldPosition(new Vec3(foodPos.x, foodPos.y, foodPos.z + 0.2));
+        this.handAnim.play("picked");
 
         tween(food)
             .to(0.2, { worldPosition: new Vec3(targetPos.x, 1, targetPos.z) })
@@ -125,5 +154,5 @@ export class PlayerController extends Component {
                 .start();
         }, 0.5);
 
-    }
+    } */
 }

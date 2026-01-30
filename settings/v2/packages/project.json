@@ -23,7 +23,7 @@
       "value": 4
     },
     {
-      "name": "SANDWICH",
+      "name": "BREAD",
       "value": 8
     },
     {
@@ -35,8 +35,16 @@
       "value": 32
     },
     {
-      "name": "CHIPS",
+      "name": "CHEESE",
       "value": 64
+    },
+    {
+      "name": "LETTUCE",
+      "value": 128
+    },
+    {
+      "name": "FINISHED",
+      "value": 256
     }
   ]
 }

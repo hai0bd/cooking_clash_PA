@@ -1,17 +1,18 @@
-import { _decorator, Camera, CCInteger, Component, instantiate, Node, Prefab, Vec3 } from 'cc';
+import { _decorator, Camera, CCInteger, Component, Enum, instantiate, Node, Prefab, Vec3 } from 'cc';
 import { PlayerController } from '../Actor/PlayerController';
 import { OrderManager } from '../Actor/Order/OrderManager';
 import { CustomerSpawner } from '../Actor/Customer/CustomerSpawner';
 import { GameState } from './Enum';
 import { CameraShake } from '../CameraShake';
+import { UIManager } from '../UIScripts/UIManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('GameManager')
 export class GameManager extends Component {
     private static _instance: GameManager;
 
-    /* @property(CameraShake)
-    mainCamera: CameraShake = null; */
+    @property(PlayerController)
+    playerCtrl: PlayerController = null;
 
     @property(CustomerSpawner)
     customerSpawner: CustomerSpawner = null;
@@ -20,6 +21,7 @@ export class GameManager extends Component {
     public listPoint: Node[] = [];
 
     public score: number = 0;
+    @property({type: Enum(GameState)})
     public state: GameState;
 
     public static get instance(): GameManager {
@@ -49,6 +51,7 @@ export class GameManager extends Component {
     }
 
     changeState(newState: GameState){
+        if(this.state == newState) return;
         this.state = newState;
 
         switch(newState){
@@ -58,8 +61,12 @@ export class GameManager extends Component {
                 // OrderManager.instance.
                 break;
             case GameState.WAIT_NEXT_CUSTOMER:
+
+                break;
+            case GameState.TIME_OUT:
                 break;
             case GameState.END:
+                UIManager.instance.visibleStore();
                 this.goToStore();
                 break;
         }

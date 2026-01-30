@@ -8,8 +8,9 @@ export enum Point {
 
 export enum GameState{
     START,
-    WAIT_NEXT_CUSTOMER,
     SERVE,
+    TIME_OUT,
+    WAIT_NEXT_CUSTOMER,
     END
 }
 
@@ -24,11 +25,14 @@ export enum ESound {
 export enum CustomerState {
     IDLE,
     WALKING,
+    ORDER,
     WAITING,
-    HAPPY,
-    ANGRY,
     EATING,
     DRINKING,
+    HAPPY,
+    PAYING,
+    ANGRY,
+    KNOCKDOWN,
     SCARED,
 }
 
@@ -42,8 +46,19 @@ export enum OrderType{
     COFFEE = 1,
     BEEFSTEAK = 2,
     SALAD = 4,
-    SANDWICH = 8,
+    BREAD = 8,
     BOMB = 16,
     CHICKEN = 32,
-    CHIPS = 64,
+    CHEESE = 64,
+    LETTUCE = 128,
+    FINISHED = 256,
+}
+
+export enum OrderName{
+    COFFEE = "COFFEE",
+    BEEFSTEAK = "BEEFSTEAK",
+    SALAD = "SALAD",
+    SANDWICH = "SANDWICH",
+    CHICKEN = "CHICKEN",
+    BOMB = "BOMB"
 }

@@ -1,0 +1,177 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "3098684d-b30e-4d99-817b-ee2c6715e8eb",
+  "files": [],
+  "subMetas": {
+    "a8781": {
+      "importer": "gltf-mesh",
+      "uuid": "3098684d-b30e-4d99-817b-ee2c6715e8eb@a8781",
+      "displayName": "",
+      "id": "a8781",
+      "name": "twl_cheese_flakes.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 12
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e80ff": {
+      "importer": "gltf-material",
+      "uuid": "3098684d-b30e-4d99-817b-ee2c6715e8eb@e80ff",
+      "displayName": "",
+      "id": "e80ff",
+      "name": "Default_Material3.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "188e3": {
+      "importer": "gltf-scene",
+      "uuid": "3098684d-b30e-4d99-817b-ee2c6715e8eb@188e3",
+      "displayName": "",
+      "id": "188e3",
+      "name": "cheese.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "3098684d-b30e-4d99-817b-ee2c6715e8eb@a8781"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "3098684d-b30e-4d99-817b-ee2c6715e8eb@e80ff"
+      ],
+      "scenes": [
+        "3098684d-b30e-4d99-817b-ee2c6715e8eb@188e3"
+      ]
+    },
+    "materials": {
+      "3098684d-b30e-4d99-817b-ee2c6715e8eb@e80ff": {
+        "__type__": "cc.Material",
+        "_name": "",
+        "_objFlags": 0,
+        "__editorExtras__": {},
+        "_native": "",
+        "_effectAsset": {
+          "__uuid__": "f648964e-8d32-41fc-9ac9-7a1e714dd17b",
+          "__expectedType__": "cc.EffectAsset"
+        },
+        "_techIdx": 0,
+        "_defines": [
+          {
+            "DCC_APP_NAME": 5
+          },
+          {},
+          {},
+          {}
+        ],
+        "_states": [
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          }
+        ],
+        "_props": [
+          {
+            "mainColor": {
+              "__type__": "cc.Color",
+              "r": 255,
+              "g": 147,
+              "b": 75,
+              "a": 255
+            },
+            "emissive": {
+              "__type__": "cc.Color",
+              "r": 112,
+              "g": 70,
+              "b": 24,
+              "a": 255
+            }
+          },
+          {},
+          {},
+          {}
+        ]
+      }
+    }
+  }
+}
