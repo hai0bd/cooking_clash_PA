@@ -43,7 +43,7 @@ export class Customer extends Component {
             this.changeState(CustomerState.EATING, node);
         }
         else {
-            this.scheduleOnce(() => {this.changeState(CustomerState.KNOCKDOWN);}, 0.5);
+            this.scheduleOnce(() => { this.changeState(CustomerState.KNOCKDOWN); }, 0.5);
         }
         this.exitPoint = exitPoint;
         this.destroyPoint = destroyPoint;
@@ -76,7 +76,7 @@ export class Customer extends Component {
         this.changeState(CustomerState.WALKING);
         director.emit(GameEvent.OPEN_DOOR);
         tween(this.node)
-            .to(0.5, { position: exitPoint.getPosition(), rotation: exitPoint.getRotation() })
+            .to(1, { position: exitPoint.getPosition(), rotation: exitPoint.getRotation() })
             .call(() => {
                 tween(this.node)
                     .to(0.5, { position: destroyPoint.getPosition(), rotation: destroyPoint.getRotation() })
@@ -94,7 +94,7 @@ export class Customer extends Component {
     }
 
     public changeState(newState: CustomerState, foodNode?: Node): void {
-        if(this.state == newState) return;
+        if (this.state == newState) return;
         this.state = newState;
 
         switch (this.state) {
@@ -115,7 +115,7 @@ export class Customer extends Component {
                 break;
             case CustomerState.PAYING:
                 this.coin.customerPurchase(this.anim);
-                this.scheduleOnce(() => {this.getOut(this.exitPoint, this.destroyPoint);}, 2);
+                this.scheduleOnce(() => { this.getOut(this.exitPoint, this.destroyPoint); }, 2);
                 break;
             case CustomerState.ANGRY:
                 this.anim.play("angry");
@@ -140,7 +140,7 @@ export class Customer extends Component {
                 });
                 break;
             case CustomerState.SCARED:
-                this.scheduleOnce(() => {this.getOut(this.exitPoint, this.destroyPoint);}, 0.5);
+                this.scheduleOnce(() => { this.getOut(this.exitPoint, this.destroyPoint); }, 0.5);
                 break;
             default:
                 break;

@@ -1,10 +1,10 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "52171421-d0a0-4a22-a1f9-a61b3ed4a15d",
   "files": [
-    "__original-animation-0.cconb"
+    "__original-animation-0.bin"
   ],
   "subMetas": {
     "30732": {
@@ -190,7 +190,7 @@
       "uuid": "52171421-d0a0-4a22-a1f9-a61b3ed4a15d@5b2a8",
       "displayName": "",
       "id": "5b2a8",
-      "name": "root|rigAction.animation",
+      "name": "disappointed.animation",
       "userData": {
         "gltfIndex": 0,
         "wrapMode": 2,
@@ -201,10 +201,10 @@
         },
         "events": []
       },
-      "ver": "1.0.17",
+      "ver": "1.0.18",
       "imported": true,
       "files": [
-        ".cconb"
+        ".bin"
       ],
       "subMetas": {}
     },
@@ -450,7 +450,7 @@
         "fps": 30,
         "splits": [
           {
-            "name": "root|rigAction",
+            "name": "disappointed",
             "from": 0,
             "to": 4.650000095367432,
             "wrapMode": 2,

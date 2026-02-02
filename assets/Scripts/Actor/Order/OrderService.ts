@@ -3,8 +3,8 @@ import { OrderCategory, OrderName, OrderType } from '../../Core/Enum';
 
 export class OrderService {
     getRandomOrder(): Order {
-        // const name = this.getRandomName();
-        const name = OrderName.SANDWICH;
+        const name = this.getRandomName();
+        // const name = OrderName.SANDWICH;
         const category = this.getCategory(name);
         const text = this.getRandomLine(name);
 

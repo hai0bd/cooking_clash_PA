@@ -1,10 +1,10 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "5694740e-ae3d-4f77-ab65-6c9a9abdb65b",
   "files": [
-    "__original-animation-0.cconb"
+    "__original-animation-0.bin"
   ],
   "subMetas": {
     "30732": {
@@ -188,7 +188,7 @@
       "uuid": "5694740e-ae3d-4f77-ab65-6c9a9abdb65b@5b2a8",
       "displayName": "",
       "id": "5b2a8",
-      "name": "root|rigAction.animation",
+      "name": "waiting.animation",
       "userData": {
         "gltfIndex": 0,
         "wrapMode": 2,
@@ -199,10 +199,10 @@
         },
         "events": []
       },
-      "ver": "1.0.17",
+      "ver": "1.0.18",
       "imported": true,
       "files": [
-        ".cconb"
+        ".bin"
       ],
       "subMetas": {}
     },
@@ -431,7 +431,7 @@
         "fps": 30,
         "splits": [
           {
-            "name": "root|rigAction",
+            "name": "waiting",
             "from": 0,
             "to": 4.300000190734863,
             "wrapMode": 2,

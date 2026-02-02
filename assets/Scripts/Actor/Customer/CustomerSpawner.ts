@@ -1,4 +1,4 @@
-import { _decorator, CCInteger, Component, instantiate, Node, Prefab } from 'cc';
+import { _decorator, CCInteger, Component, instantiate, Node, Prefab, randomRange } from 'cc';
 import { Customer } from './Customer';
 import { CustomerState, GameState, Point } from '../../Core/Enum';
 import { GameManager } from '../../Core/GameManager';
@@ -36,7 +36,9 @@ export class CustomerSpawner extends Component {
     }
 
     private genCustomers(): void {
-        const customerNode = instantiate(this.customerPrefab[0]);
+        const random = Math.floor(randomRange(0, this.customerPrefab.length));
+        console.log(random);
+        const customerNode = instantiate(this.customerPrefab[random]);
         this.customer = customerNode.getComponent(Customer);
         let isTrouble = false;
         if (this.customerIndex % 2 == 0) isTrouble = true;

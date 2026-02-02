@@ -32,7 +32,7 @@
           "2d": {
             "_value": true
           },
-          "xr": {
+          "sorting-2d": {
             "_value": false
           },
           "rich-text": {
@@ -54,10 +54,10 @@
             "_value": true
           },
           "particle": {
-            "_value": false
+            "_value": true
           },
           "physics": {
-            "_value": true,
+            "_value": false,
             "_option": "physics-builtin"
           },
           "physics-ammo": {
@@ -149,8 +149,8 @@
             "_value": false
           },
           "spine": {
-            "_value": false,
-            "_option": "spine-4.2"
+            "_value": true,
+            "_option": "spine-3.8"
           },
           "spine-3.8": {
             "_value": true,
@@ -185,9 +185,14 @@
           },
           "legacy-pipeline": {
             "_value": false
+          },
+          "xr": {
+            "_value": false
           }
         },
-        "flags": {},
+        "flags": {
+          "LOAD_SPINE_MANUALLY": false
+        },
         "includeModules": [
           "2d",
           "3d",
@@ -200,10 +205,11 @@
           "marionette",
           "mask",
           "meshopt",
-          "physics-builtin",
+          "particle",
           "procedural-animation",
           "profiler",
           "skeletal-animation",
+          "spine-3.8",
           "tween",
           "ui"
         ],

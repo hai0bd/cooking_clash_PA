@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "feeba1a8-5476-437b-83b3-0638441380c3",
@@ -167,46 +167,6 @@
       ],
       "subMetas": {}
     },
-    "48b02": {
-      "importer": "gltf-embeded-image",
-      "uuid": "feeba1a8-5476-437b-83b3-0638441380c3@48b02",
-      "displayName": "",
-      "id": "48b02",
-      "name": "base_color_texture.image",
-      "userData": {
-        "gltfIndex": 0,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": true,
-        "type": "texture"
-      },
-      "ver": "1.0.3",
-      "imported": true,
-      "files": [
-        ".json",
-        ".png"
-      ],
-      "subMetas": {}
-    },
-    "7c09f": {
-      "importer": "gltf-embeded-image",
-      "uuid": "feeba1a8-5476-437b-83b3-0638441380c3@7c09f",
-      "displayName": "",
-      "id": "7c09f",
-      "name": "alpha_texture.image",
-      "userData": {
-        "gltfIndex": 1,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": true,
-        "type": "texture"
-      },
-      "ver": "1.0.3",
-      "imported": true,
-      "files": [
-        ".json",
-        ".png"
-      ],
-      "subMetas": {}
-    },
     "7d6ab": {
       "importer": "texture",
       "uuid": "feeba1a8-5476-437b-83b3-0638441380c3@7d6ab",
@@ -220,8 +180,8 @@
         "magfilter": "linear",
         "mipfilter": "none",
         "anisotropy": 0,
-        "isUuid": true,
-        "imageUuidOrDatabaseUri": "feeba1a8-5476-437b-83b3-0638441380c3@48b02"
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/Res/KitchenTools/Kitchenware_Diff.jpg"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -243,8 +203,8 @@
         "magfilter": "linear",
         "mipfilter": "none",
         "anisotropy": 0,
-        "isUuid": true,
-        "imageUuidOrDatabaseUri": "feeba1a8-5476-437b-83b3-0638441380c3@7c09f"
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/Res/KitchenTools/Kitchenware_Diff.jpg"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -290,11 +250,11 @@
     "imageMetas": [
       {
         "name": "base_color_texture",
-        "uri": "feeba1a8-5476-437b-83b3-0638441380c3@48b02"
+        "uri": "db://assets/Res/KitchenTools/Kitchenware_Diff.jpg"
       },
       {
         "name": "alpha_texture",
-        "uri": "feeba1a8-5476-437b-83b3-0638441380c3@7c09f"
+        "uri": "db://assets/Res/KitchenTools/Kitchenware_Diff.jpg"
       }
     ],
     "fbx": {

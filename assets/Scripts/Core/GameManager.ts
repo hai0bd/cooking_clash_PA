@@ -3,7 +3,6 @@ import { PlayerController } from '../Actor/PlayerController';
 import { OrderManager } from '../Actor/Order/OrderManager';
 import { CustomerSpawner } from '../Actor/Customer/CustomerSpawner';
 import { GameState } from './Enum';
-import { CameraShake } from '../CameraShake';
 import { UIManager } from '../UIScripts/UIManager';
 const { ccclass, property } = _decorator;
 

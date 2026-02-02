@@ -1,10 +1,10 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "1e04f75b-d317-4cbb-a928-f31dbcf0a95d",
   "files": [
-    "__original-animation-0.cconb"
+    "__original-animation-0.bin"
   ],
   "subMetas": {
     "24745": {
@@ -258,7 +258,7 @@
       "uuid": "1e04f75b-d317-4cbb-a928-f31dbcf0a95d@5b2a8",
       "displayName": "",
       "id": "5b2a8",
-      "name": "root|rigAction.animation",
+      "name": "idle.animation",
       "userData": {
         "gltfIndex": 0,
         "wrapMode": 2,
@@ -269,10 +269,10 @@
         },
         "events": []
       },
-      "ver": "1.0.17",
+      "ver": "1.0.18",
       "imported": true,
       "files": [
-        ".cconb"
+        ".bin"
       ],
       "subMetas": {}
     },
@@ -536,7 +536,7 @@
         "fps": 30,
         "splits": [
           {
-            "name": "root|rigAction",
+            "name": "idle",
             "from": 0,
             "to": 2.9833333492279053,
             "wrapMode": 2,

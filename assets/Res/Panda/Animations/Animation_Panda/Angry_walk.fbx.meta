@@ -1,10 +1,10 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "be70b339-25a0-41f1-8f01-15282f95ab50",
   "files": [
-    "__original-animation-0.cconb"
+    "__original-animation-0.bin"
   ],
   "subMetas": {
     "30732": {
@@ -190,7 +190,7 @@
       "uuid": "be70b339-25a0-41f1-8f01-15282f95ab50@5b2a8",
       "displayName": "",
       "id": "5b2a8",
-      "name": "root|rigAction.animation",
+      "name": "angry_walk.animation",
       "userData": {
         "gltfIndex": 0,
         "wrapMode": 2,
@@ -201,10 +201,10 @@
         },
         "events": []
       },
-      "ver": "1.0.17",
+      "ver": "1.0.18",
       "imported": true,
       "files": [
-        ".cconb"
+        ".bin"
       ],
       "subMetas": {}
     },
@@ -410,7 +410,7 @@
         "fps": 30,
         "splits": [
           {
-            "name": "root|rigAction",
+            "name": "angry_walk",
             "from": 0,
             "to": 0.6499999761581421,
             "wrapMode": 2,

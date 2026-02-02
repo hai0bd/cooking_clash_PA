@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "a6be1437-2301-497b-9101-83e9325ea57f",
@@ -23,26 +23,6 @@
       ],
       "subMetas": {}
     },
-    "43c71": {
-      "importer": "gltf-embeded-image",
-      "uuid": "a6be1437-2301-497b-9101-83e9325ea57f@43c71",
-      "displayName": "",
-      "id": "43c71",
-      "name": "file1.image",
-      "userData": {
-        "gltfIndex": 0,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": true,
-        "type": "texture"
-      },
-      "ver": "1.0.3",
-      "imported": true,
-      "files": [
-        ".json",
-        ".png"
-      ],
-      "subMetas": {}
-    },
     "d20e9": {
       "importer": "texture",
       "uuid": "a6be1437-2301-497b-9101-83e9325ea57f@d20e9",
@@ -56,8 +36,8 @@
         "magfilter": "linear",
         "mipfilter": "none",
         "anisotropy": 0,
-        "isUuid": true,
-        "imageUuidOrDatabaseUri": "a6be1437-2301-497b-9101-83e9325ea57f@43c71"
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/Res/Food/food_mat_BaseColor.png"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -103,7 +83,7 @@
     "imageMetas": [
       {
         "name": "file1",
-        "uri": "a6be1437-2301-497b-9101-83e9325ea57f@43c71"
+        "uri": "db://assets/Res/Food/food_mat_BaseColor.png"
       }
     ],
     "fbx": {

@@ -1,11 +1,12 @@
-import { _decorator, Component, director, Enum, Game, instantiate, Node, Prefab, tween, Vec3 } from 'cc';
+import { _decorator, Component, director, Enum, Game, instantiate, Node, ParticleSystem, Prefab, tween, Vec3 } from 'cc';
 import { Order, OrderService } from './OrderService';
 import { Customer } from '../Customer/Customer';
 import { CustomerState, OrderCategory, OrderName, OrderType, Point } from '../../Core/Enum';
 import { UIManager } from '../../UIScripts/UIManager';
 import { recipe } from './FoodRecipe';
 import { DisplayData } from './DisplayData';
-import { GameEvent } from '../../Core/Event';
+import { EventUI, GameEvent } from '../../Core/Event';
+import { RecipeData } from './RecipeData';
 const { ccclass, property } = _decorator;
 
 @ccclass('OrderManager')
@@ -15,8 +16,15 @@ export class OrderManager extends Component {
     @property([DisplayData])
     displayData: DisplayData[] = [];
 
+    @property([RecipeData])
+    recipeData: RecipeData[] = [];
+
     @property(Node)
     displayParent: Node = null;
+
+    @property(ParticleSystem)
+    explosion: ParticleSystem = null;
+
 
     public customer: Customer = null;
     public listPoint: Node[] = [];
@@ -52,6 +60,7 @@ export class OrderManager extends Component {
         const currentRecipe = this.getRecipe(this.customer.order);
         if (orderType == currentRecipe[this.currentStep].step) {
             this.currentStep++;
+            director.emit(EventUI.NEXT_TUT);
             if (this.currentStep >= currentRecipe.length) {
                 this.serveOrder(food);
                 this.currentDisplay.destroy();
@@ -149,6 +158,9 @@ export class OrderManager extends Component {
 
         if (category == OrderCategory.THROW) {
             endPos = customerPos;
+            this.scheduleOnce(()=> {
+                this.explosion.play();
+            }, 0.5);
         }
         else {
             endPos = new Vec3(customerPos.x, customerPos.y + 0.05, customerPos.y);

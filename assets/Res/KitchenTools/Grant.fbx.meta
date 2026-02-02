@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "ea306d3f-4c24-439b-ac32-8f354fdc1f56",
@@ -23,6 +23,26 @@
       ],
       "subMetas": {}
     },
+    "48b02": {
+      "importer": "gltf-embeded-image",
+      "uuid": "ea306d3f-4c24-439b-ac32-8f354fdc1f56@48b02",
+      "displayName": "",
+      "id": "48b02",
+      "name": "base_color_texture.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
     "7d6ab": {
       "importer": "texture",
       "uuid": "ea306d3f-4c24-439b-ac32-8f354fdc1f56@7d6ab",
@@ -36,8 +56,8 @@
         "magfilter": "linear",
         "mipfilter": "none",
         "anisotropy": 0,
-        "isUuid": false,
-        "imageUuidOrDatabaseUri": "db://assets/Res/KitchenTools/Grant_BaseColor.png"
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "ea306d3f-4c24-439b-ac32-8f354fdc1f56@48b02"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -67,7 +87,7 @@
     "imageMetas": [
       {
         "name": "base_color_texture",
-        "uri": "db://assets/Res/KitchenTools/Grant_BaseColor.png"
+        "uri": "ea306d3f-4c24-439b-ac32-8f354fdc1f56@48b02"
       }
     ],
     "fbx": {
@@ -100,7 +120,7 @@
         "ea306d3f-4c24-439b-ac32-8f354fdc1f56@7d6ab"
       ],
       "materials": [
-        "fd24292e-ec33-4b95-984a-ac3c96588d92"
+        "6829bcb4-bcd3-413c-b284-68b4a2377873"
       ],
       "scenes": [
         "ea306d3f-4c24-439b-ac32-8f354fdc1f56@4c9ce"

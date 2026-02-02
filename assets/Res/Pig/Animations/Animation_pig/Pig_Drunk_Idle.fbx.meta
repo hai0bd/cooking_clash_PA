@@ -1,10 +1,10 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "9247b305-caf3-48ad-b8af-eef54a1ed1e3",
   "files": [
-    "__original-animation-0.cconb"
+    "__original-animation-0.bin"
   ],
   "subMetas": {
     "30732": {
@@ -188,7 +188,7 @@
       "uuid": "9247b305-caf3-48ad-b8af-eef54a1ed1e3@3fe82",
       "displayName": "",
       "id": "3fe82",
-      "name": "root|Pig_Drunk_Idle.animation",
+      "name": "karma_talk.animation",
       "userData": {
         "gltfIndex": 0,
         "wrapMode": 2,
@@ -199,10 +199,10 @@
         },
         "events": []
       },
-      "ver": "1.0.17",
+      "ver": "1.0.18",
       "imported": true,
       "files": [
-        ".cconb"
+        ".bin"
       ],
       "subMetas": {}
     },
@@ -431,7 +431,7 @@
         "fps": 30,
         "splits": [
           {
-            "name": "root|Pig_Drunk_Idle",
+            "name": "karma_talk",
             "from": 0,
             "to": 6.875,
             "wrapMode": 2,

@@ -1,9 +1,12 @@
-import { _decorator, Component, Label, Node, Sprite, tween, UIOpacity, UITransform } from 'cc';
+import { _decorator, Component, Label, Node, Sprite, SpriteFrame, tween, UIOpacity, UITransform } from 'cc';
 import { OrderData } from '../Actor/Order/OrderData';
 import { OrderCategory, OrderName, OrderType } from '../Core/Enum';
 import { PopupOrder } from './PopupOrder';
 import { Order } from '../Actor/Order/OrderService';
 import { SpeechBubble } from './SpeechBubble';
+import { RecipeData } from '../Actor/Order/RecipeData';
+import { recipe } from '../Actor/Order/FoodRecipe';
+import { Tut } from '../Tut';
 const { ccclass, property } = _decorator;
 
 @ccclass('UIManager')
@@ -22,8 +25,14 @@ export class UIManager extends Component {
     @property(SpeechBubble)
     speechBubble: SpeechBubble = null;
 
+    @property(Tut)
+    tut: Tut = null;
+
     @property([OrderData])
-    data: OrderData[] = [];
+    orderData: OrderData[] = [];
+
+    @property({type: [RecipeData]})
+    recipeData: RecipeData[] = [];
 
     @property(Label)
     coinAmount: Label = null;
@@ -45,10 +54,6 @@ export class UIManager extends Component {
 
     addCoin(score: number) {
         const currentScore = Number(this.coinAmount.string);
-        /* for (let i = 1; i <= score; i++) {
-            this.coinAmount.string = (currentScore + i).toString();
-            this.scheduleOnce(() => { }, 0.5);
-        } */
         let i = 1;
         const baseScale = this.coinAmount.node.scale.clone();
         this.schedule(() => {
@@ -72,11 +77,14 @@ export class UIManager extends Component {
 
 
     customerOrder(order: Order) {
+        this.tut.customerOrder(order);
         if (order.category == OrderCategory.THROW) {
             this.popupOrder.orderBoom(order.text)
         }
         else {
-            this.popupOrder.orderFood(this.getSpriteFrame(order.name), "x1");
+            const orderSprite = this.getOrderNameSprite(order.name);
+            const recipeSprite = this.getRecipe(order.name);
+            this.popupOrder.orderFood(orderSprite, recipeSprite);
         }
     }
 
@@ -84,8 +92,23 @@ export class UIManager extends Component {
         this.popupOrder.closed();
     }
 
-    getSpriteFrame(key: OrderName) {
-        return this.data.find(d => d.orderName === key)?.spriteFr ?? null;
+    getRecipe(orderName: OrderName): SpriteFrame[] {
+        const recipeStep = recipe[orderName];
+        let sprites: SpriteFrame[] = [];
+
+        for (let i = 0; i < recipeStep.length - 1; i++) {
+            sprites.push(this.getRecipeSprite(recipeStep[i].step));
+        }
+
+        return sprites;
+    }
+
+    getOrderNameSprite(key: OrderName) {
+        return this.orderData.find(d => d.orderName === key)?.spriteFr ?? null;
+    }
+
+    getRecipeSprite(key: OrderType) {
+        return this.recipeData.find(d => d.type === key)?.typeSprite ?? null;
     }
 }
 

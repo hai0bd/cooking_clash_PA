@@ -1,4 +1,4 @@
-import { _decorator, Component, easing, Label, Node, Sprite, SpriteFrame, tween, UIOpacity, Vec3 } from 'cc';
+import { _decorator, Component, easing, instantiate, Label, Node, Prefab, Sprite, SpriteFrame, tween, UIOpacity, Vec3 } from 'cc';
 import { GameManager } from '../Core/GameManager';
 import { GameState } from '../Core/Enum';
 import { OrderManager } from '../Actor/Order/OrderManager';
@@ -36,18 +36,37 @@ export class PopupOrder extends Component {
     @property(UIOpacity)
     private warningScreen: UIOpacity = null;
 
-    private _isClose: boolean = true;
+    @property(Node)
+    layoutStep: Node = null;
 
-    orderFood(spriteFr: SpriteFrame, amount: string) {
+    @property(Prefab)
+    stepPrefab: Prefab = null;
+
+    private _isClose: boolean = true;
+    private listStep: Node[] = [];
+
+    orderFood(spriteFr: SpriteFrame, recipe: SpriteFrame[]) {
         if (this._isClose) {
             this.openPopup(false);
             this.bounceNode(Vec3.ZERO, Vec3.ONE, this.popupBG.node, this.foodSprite.node, this.foodAmount.node)
 
             this.popupBG.spriteFrame = this.bgFood;
             this.foodSprite.spriteFrame = spriteFr;
-            this.foodAmount.string = amount;
-            this.countdown(10);
+
+            this.setRecipe(recipe);
+            // this.foodAmount.string = amount;
+            this.countdown(100);
         }
+    }
+
+    setRecipe(recipe: SpriteFrame[]) {
+        for (let i = 0; i < recipe.length; i++) {
+            const step = instantiate(this.stepPrefab);
+            this.layoutStep.addChild(step);
+            step.getComponent(Sprite).spriteFrame = recipe[i];
+            this.listStep.push(step);
+        }
+        this.scheduleOnce(() => { this.bounceNode(Vec3.ZERO, new Vec3(0.3, 0.3, 1), ...this.listStep); })
     }
 
     orderBoom(lines: string) {
@@ -107,13 +126,22 @@ export class PopupOrder extends Component {
             this.popupBG.node.setScale(new Vec3(startScale, startScale, startScale));
             tween(this.popupBG.node)
                 .to(1, { scale: new Vec3(endScale, endScale, endScale) }, { easing: 'backIn' })
-                .call(() => { this.popupBG.node.active = false; })
+                .call(() => {
+                    if (this.listStep.length > 0) {
+                        for (let i = 0; i < this.listStep.length; i++) {
+                            this.listStep[i].destroy();
+                            this.listStep[i] = null;
+                        }
+                        this.listStep = [];
+                    }
+                    this.popupBG.node.active = false;
+                })
                 .start();
         }
     }
 
     bounceNode(startScale: Vec3, endScale: Vec3, ...nodes: Node[]) {
-        const midScale = new Vec3(1.2, 1.2, 1.2);
+        const midScale = new Vec3(endScale.x + 0.2, endScale.y + 0.2, endScale.z + 0.2);
         nodes.forEach((node, index) => {
             node.setScale(startScale);
             tween(node)

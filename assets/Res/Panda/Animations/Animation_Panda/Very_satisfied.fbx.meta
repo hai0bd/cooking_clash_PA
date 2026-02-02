@@ -1,10 +1,10 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "c588bcf3-0693-4897-abc9-22e38090777d",
   "files": [
-    "__original-animation-0.cconb"
+    "__original-animation-0.bin"
   ],
   "subMetas": {
     "30732": {
@@ -190,10 +190,10 @@
       "uuid": "c588bcf3-0693-4897-abc9-22e38090777d@5b2a8",
       "displayName": "",
       "id": "5b2a8",
-      "name": "root|rigAction.animation",
+      "name": "satisfied.animation",
       "userData": {
         "gltfIndex": 0,
-        "wrapMode": 2,
+        "wrapMode": 1,
         "sample": 30,
         "span": {
           "from": 0,
@@ -201,10 +201,10 @@
         },
         "events": []
       },
-      "ver": "1.0.17",
+      "ver": "1.0.18",
       "imported": true,
       "files": [
-        ".cconb"
+        ".bin"
       ],
       "subMetas": {}
     },
@@ -450,10 +450,10 @@
         "fps": 30,
         "splits": [
           {
-            "name": "root|rigAction",
+            "name": "satisfied",
             "from": 0,
             "to": 2.9833333492279053,
-            "wrapMode": 2,
+            "wrapMode": 1,
             "previousId": "5b2a8"
           }
         ]

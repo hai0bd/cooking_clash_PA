@@ -1,10 +1,10 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "78e61a3e-65f2-4828-a469-c3ec47f40003",
   "files": [
-    "__original-animation-0.cconb"
+    "__original-animation-0.bin"
   ],
   "subMetas": {
     "24745": {
@@ -258,10 +258,10 @@
       "uuid": "78e61a3e-65f2-4828-a469-c3ec47f40003@5b2a8",
       "displayName": "",
       "id": "5b2a8",
-      "name": "root|rigAction.animation",
+      "name": "paying.animation",
       "userData": {
         "gltfIndex": 0,
-        "wrapMode": 2,
+        "wrapMode": 1,
         "sample": 30,
         "span": {
           "from": 0,
@@ -269,10 +269,10 @@
         },
         "events": []
       },
-      "ver": "1.0.17",
+      "ver": "1.0.18",
       "imported": true,
       "files": [
-        ".cconb"
+        ".bin"
       ],
       "subMetas": {}
     },
@@ -536,10 +536,10 @@
         "fps": 30,
         "splits": [
           {
-            "name": "root|rigAction",
+            "name": "paying",
             "from": 0,
             "to": 2.6500000953674316,
-            "wrapMode": 2,
+            "wrapMode": 1,
             "previousId": "5b2a8"
           }
         ]

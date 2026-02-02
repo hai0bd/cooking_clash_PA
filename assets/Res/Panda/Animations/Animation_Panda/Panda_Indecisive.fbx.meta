@@ -1,10 +1,10 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "cc3a570d-228a-4f64-8ebf-eccc46b87c43",
   "files": [
-    "__original-animation-0.cconb"
+    "__original-animation-0.bin"
   ],
   "subMetas": {
     "30732": {
@@ -190,21 +190,21 @@
       "uuid": "cc3a570d-228a-4f64-8ebf-eccc46b87c43@23f11",
       "displayName": "",
       "id": "23f11",
-      "name": "root|Panda_Indecisive.animation",
+      "name": "karma_talk.animation",
       "userData": {
         "gltfIndex": 0,
         "wrapMode": 2,
         "sample": 30,
         "span": {
-          "from": 0,
-          "to": 8.333333015441895
+          "from": 0.8,
+          "to": 6.9
         },
         "events": []
       },
-      "ver": "1.0.17",
+      "ver": "1.0.18",
       "imported": true,
       "files": [
-        ".cconb"
+        ".bin"
       ],
       "subMetas": {}
     },
@@ -450,9 +450,9 @@
         "fps": 30,
         "splits": [
           {
-            "name": "root|Panda_Indecisive",
-            "from": 0,
-            "to": 8.333333015441895,
+            "name": "karma_talk",
+            "from": 0.8,
+            "to": 6.9,
             "wrapMode": 2,
             "previousId": "23f11"
           }

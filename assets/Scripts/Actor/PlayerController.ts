@@ -1,6 +1,6 @@
-import { _decorator, Camera, Component, Enum, EventTouch, geometry, Input, input, instantiate, MeshRenderer, Node, PhysicsRayResult, PhysicsSystem, Quat, SkeletalAnimation, tween, Vec3 } from 'cc';
+import { _decorator, Camera, Component, EventTouch, geometry, Input, input, instantiate, MeshRenderer, Node, SkeletalAnimation, tween, Vec3 } from 'cc';
 import { OrderManager } from './Order/OrderManager';
-import { GameState, OrderCategory, OrderType } from '../Core/Enum';
+import { GameState } from '../Core/Enum';
 import { GameManager } from '../Core/GameManager';
 import { isPortrait } from '../UIScripts/responsive';
 const { ccclass, property } = _decorator;
@@ -25,12 +25,8 @@ export class PlayerController extends Component {
     @property(Node)
     handSocket: Node = null;
 
-    /* @property(Node)
-    customerNode: Node = null; */
-
     private ray: geometry.Ray = new geometry.Ray();
     private playerHandler: MeshRenderer = null;
-    // private startHandPos: Vec3/*  = this.handAnim.node.getWorldPosition().clone() */;
 
     onLoad() {
         // input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);

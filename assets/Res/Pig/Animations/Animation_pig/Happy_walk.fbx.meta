@@ -1,10 +1,10 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "09e9a078-f7f7-43a7-bbb7-b0ade9a5cee4",
   "files": [
-    "__original-animation-0.cconb"
+    "__original-animation-0.bin"
   ],
   "subMetas": {
     "30732": {
@@ -204,7 +204,7 @@
       "uuid": "09e9a078-f7f7-43a7-bbb7-b0ade9a5cee4@5b2a8",
       "displayName": "",
       "id": "5b2a8",
-      "name": "root|rigAction.animation",
+      "name": "happy_walk.animation",
       "userData": {
         "gltfIndex": 0,
         "wrapMode": 2,
@@ -215,10 +215,10 @@
         },
         "events": []
       },
-      "ver": "1.0.17",
+      "ver": "1.0.18",
       "imported": true,
       "files": [
-        ".cconb"
+        ".bin"
       ],
       "subMetas": {}
     },
@@ -431,7 +431,7 @@
         "fps": 30,
         "splits": [
           {
-            "name": "root|rigAction",
+            "name": "happy_walk",
             "from": 0,
             "to": 0.9833333492279053,
             "wrapMode": 2,

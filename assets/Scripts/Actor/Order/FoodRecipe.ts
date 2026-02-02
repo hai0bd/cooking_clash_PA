@@ -2,7 +2,7 @@ import { OrderType } from "../../Core/Enum"
 
 export const recipe = {
     "SANDWICH": [
-        { step: OrderType.BREAD },
+        { step: OrderType.BREAD, },
         { step: OrderType.LETTUCE },
         { step: OrderType.BEEFSTEAK },
         { step: OrderType.CHEESE },
