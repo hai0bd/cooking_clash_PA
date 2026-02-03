@@ -1,0 +1,99 @@
+{
+  "ver": "2.3.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "0020df71-d3a5-43fa-b058-b18cd1204ae4",
+  "files": [
+    "__original-animation-0.bin"
+  ],
+  "subMetas": {
+    "18d6f": {
+      "importer": "gltf-animation",
+      "uuid": "0020df71-d3a5-43fa-b058-b18cd1204ae4@18d6f",
+      "displayName": "",
+      "id": "18d6f",
+      "name": "angry.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 1,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 2.625
+        },
+        "events": []
+      },
+      "ver": "1.0.18",
+      "imported": true,
+      "files": [
+        ".bin"
+      ],
+      "subMetas": {}
+    },
+    "c3121": {
+      "importer": "gltf-scene",
+      "uuid": "0020df71-d3a5-43fa-b058-b18cd1204ae4@c3121",
+      "displayName": "",
+      "id": "c3121",
+      "name": "Attack.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 2.625,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "angry",
+            "from": 0,
+            "to": 2.625,
+            "wrapMode": 1,
+            "previousId": "18d6f"
+          }
+        ]
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "0020df71-d3a5-43fa-b058-b18cd1204ae4@c3121"
+      ]
+    }
+  }
+}

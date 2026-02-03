@@ -37,6 +37,7 @@ export class Customer extends Component {
     }
 
     servedOrder(node: Node, exitPoint: Node, destroyPoint: Node): OrderCategory {
+        console.log("served ok");
         if (this.order.category == OrderCategory.DRINK)
             this.changeState(CustomerState.DRINKING, node);
         else if (this.order.category == OrderCategory.EAT) {
@@ -122,9 +123,11 @@ export class Customer extends Component {
                 this.anim.play("angry");
                 break;
             case CustomerState.EATING:
+                console.log("changeState ok");
                 this.getFood(foodNode, "eat");
                 break;
             case CustomerState.DRINKING:
+                console.log("changeState ok");
                 this.getFood(foodNode, "drink");
                 break;
             case CustomerState.WAITING:
@@ -137,7 +140,7 @@ export class Customer extends Component {
                         this.anim.once(SkeletalAnimation.EventType.FINISHED, () => {
                             this.changeState(CustomerState.SCARED);
                         })
-                    }, 1.5);
+                    },);
                 });
                 break;
             case CustomerState.SCARED:

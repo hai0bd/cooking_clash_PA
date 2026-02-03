@@ -55,7 +55,7 @@ export class PopupOrder extends Component {
 
             this.setRecipe(recipe);
             // this.foodAmount.string = amount;
-            this.countdown(100);
+            this.countdown(20);
         }
     }
 

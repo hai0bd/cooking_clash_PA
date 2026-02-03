@@ -37,7 +37,6 @@ export class CustomerSpawner extends Component {
 
     private genCustomers(): void {
         const random = Math.floor(randomRange(0, this.customerPrefab.length));
-        console.log(random);
         const customerNode = instantiate(this.customerPrefab[random]);
         this.customer = customerNode.getComponent(Customer);
         let isTrouble = false;

@@ -16,14 +16,8 @@ export class PlayerController extends Component {
     @property(MeshRenderer)
     targetMesh: MeshRenderer[] = [];
 
-    @property(SkeletalAnimation)
-    handAnim: SkeletalAnimation = null;
-
     @property(Node)
     cuttingBoard: Node = null;
-
-    @property(Node)
-    handSocket: Node = null;
 
     private ray: geometry.Ray = new geometry.Ray();
     private playerHandler: MeshRenderer = null;
@@ -56,36 +50,5 @@ export class PlayerController extends Component {
                 }
             }
         }
-    }
-    private startHandPos: Vec3;
-    moveToIngredient(node: Node) {
-        const hand = this.handAnim.node;
-        this.startHandPos = this.handAnim.node.getPosition().clone();
-
-        hand.active = true;
-        hand.setPosition(this.startHandPos);
-        tween(hand)
-            .to(.5, { worldPosition: node.getWorldPosition() })
-            .call(() => {
-                this.handAnim.play("picked");
-                this.handAnim.once(SkeletalAnimation.EventType.FINISHED, () => {
-                    this.takeIngredient(node);
-                    /* tween(node)
-                        .to(1, { worldPosition: this.cuttingBoard.getWorldPosition() })
-                        .start(); */
-                });
-            })
-            .start();
-
-    }
-
-    takeIngredient(ingredient: Node) {
-        const cloneIngredient = instantiate(ingredient);
-        const quat = ingredient.getWorldRotation();
-        cloneIngredient.setParent(this.handSocket);
-        cloneIngredient.setWorldRotation(quat);
-        tween(this.handAnim.node)
-            .to(0.5, { worldPosition: this.cuttingBoard.getWorldPosition() })
-            .start();
     }
 }

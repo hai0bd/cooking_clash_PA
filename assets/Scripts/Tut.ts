@@ -45,7 +45,6 @@ export class Tut extends Component {
         this.tutLabel.string = steps[this.currentStep].describe;
         for (let i = 0; i < this.ingredient.length; i++) {
             if (this.ingredient[i].layer == steps[this.currentStep].step) {
-                console.log(this.ingredient[i].name);
                 this.moveHand(this.ingredient[i]);
                 break;
             }

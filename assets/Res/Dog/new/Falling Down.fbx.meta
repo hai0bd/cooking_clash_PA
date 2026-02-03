@@ -1,0 +1,99 @@
+{
+  "ver": "2.3.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "92b4945f-c926-4810-ad86-02c38886d073",
+  "files": [
+    "__original-animation-0.bin"
+  ],
+  "subMetas": {
+    "18d6f": {
+      "importer": "gltf-animation",
+      "uuid": "92b4945f-c926-4810-ad86-02c38886d073@18d6f",
+      "displayName": "",
+      "id": "18d6f",
+      "name": "knockdown.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 1,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 2.25
+        },
+        "events": []
+      },
+      "ver": "1.0.18",
+      "imported": true,
+      "files": [
+        ".bin"
+      ],
+      "subMetas": {}
+    },
+    "7b4bc": {
+      "importer": "gltf-scene",
+      "uuid": "92b4945f-c926-4810-ad86-02c38886d073@7b4bc",
+      "displayName": "",
+      "id": "7b4bc",
+      "name": "Falling Down.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 2.25,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "knockdown",
+            "from": 0,
+            "to": 2.25,
+            "wrapMode": 1,
+            "previousId": "18d6f"
+          }
+        ]
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "92b4945f-c926-4810-ad86-02c38886d073@7b4bc"
+      ]
+    }
+  }
+}

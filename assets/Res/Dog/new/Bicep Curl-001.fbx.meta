@@ -1,0 +1,99 @@
+{
+  "ver": "2.3.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "d1b22f94-1e76-4d12-b7a2-fb67ab9bd18f",
+  "files": [
+    "__original-animation-0.bin"
+  ],
+  "subMetas": {
+    "77709": {
+      "importer": "gltf-scene",
+      "uuid": "d1b22f94-1e76-4d12-b7a2-fb67ab9bd18f@77709",
+      "displayName": "",
+      "id": "77709",
+      "name": "Bicep Curl-001.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "18d6f": {
+      "importer": "gltf-animation",
+      "uuid": "d1b22f94-1e76-4d12-b7a2-fb67ab9bd18f@18d6f",
+      "displayName": "",
+      "id": "18d6f",
+      "name": "drink.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 1,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 5.875
+        },
+        "events": []
+      },
+      "ver": "1.0.18",
+      "imported": true,
+      "files": [
+        ".bin"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 5.875,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "drink",
+            "from": 0,
+            "to": 5.875,
+            "wrapMode": 1,
+            "previousId": "18d6f"
+          }
+        ]
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "d1b22f94-1e76-4d12-b7a2-fb67ab9bd18f@77709"
+      ]
+    }
+  }
+}

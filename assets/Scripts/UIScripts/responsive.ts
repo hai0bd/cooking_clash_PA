@@ -38,14 +38,4 @@ export class responsive extends Component {
 export function isPortrait(): boolean {
     const size = screen.windowSize;
     return size.width < size.height;
-    /* const canvas = view.getDesignResolutionSize();
-    let deviceResolution = view.getResolutionPolicy();
-    let designRatio = canvas.width / canvas.height;
-    let deviceRatio =
-        deviceResolution.canvasSize.width /
-        deviceResolution.canvasSize.height;
-    console.log(deviceRatio);
-    if (deviceRatio < 1) console.log("Portrait");
-    else console.log("Landscape");
-    return deviceRatio < 1; */
 }
