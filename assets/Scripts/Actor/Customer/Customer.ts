@@ -74,9 +74,9 @@ export class Customer extends Component {
     getOut(exitPoint: Node, destroyPoint: Node): void {
         GameManager.instance.changeState(GameState.WAIT_NEXT_CUSTOMER);
         this.changeState(CustomerState.WALKING);
-        director.emit(GameEvent.OPEN_DOOR);
+        this.scheduleOnce(() => { director.emit(GameEvent.OPEN_DOOR); }, 1.5);
         tween(this.node)
-            .to(1, { position: exitPoint.getPosition(), rotation: exitPoint.getRotation() })
+            .to(2, { position: exitPoint.getPosition(), eulerAngles: exitPoint.eulerAngles })
             .call(() => {
                 tween(this.node)
                     .to(0.5, { position: destroyPoint.getPosition(), rotation: destroyPoint.getRotation() })
@@ -114,7 +114,8 @@ export class Customer extends Component {
                 }, this);
                 break;
             case CustomerState.PAYING:
-                this.coin.customerPurchase(this.anim);
+                this.anim.play("paying");
+                this.coin.customerPurchase(this.hand);
                 this.scheduleOnce(() => { this.getOut(this.exitPoint, this.destroyPoint); }, 2);
                 break;
             case CustomerState.ANGRY:

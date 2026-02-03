@@ -4,6 +4,7 @@ import { OrderManager } from '../Actor/Order/OrderManager';
 import { CustomerSpawner } from '../Actor/Customer/CustomerSpawner';
 import { GameState } from './Enum';
 import { UIManager } from '../UIScripts/UIManager';
+import super_html_playable from '../super_html/super_html_playable';
 const { ccclass, property } = _decorator;
 
 @ccclass('GameManager')
@@ -20,7 +21,7 @@ export class GameManager extends Component {
     public listPoint: Node[] = [];
 
     public score: number = 0;
-    @property({type: Enum(GameState)})
+    @property({ type: Enum(GameState) })
     public state: GameState;
 
     public static get instance(): GameManager {
@@ -37,23 +38,26 @@ export class GameManager extends Component {
         } else {
             this.destroy();
         }
+
+        super_html_playable.set_google_play_url("https://play.google.com/store/apps/details?id=com.m.cooking.free.chefmaster");
+        super_html_playable.set_app_store_url("https://play.google.com/store/apps/details?id=com.m.cooking.free.chefmaster");
     }
-    
-    start(){
+
+    start() {
         this.state = GameState.START;
         OrderManager.instance.listPoint = this.listPoint;
         this.customerSpawner.init(this.listPoint);
     }
 
-    isState(state: GameState): boolean{
+    isState(state: GameState): boolean {
         return this.state === state
     }
 
-    changeState(newState: GameState){
-        if(this.state == newState) return;
+    changeState(newState: GameState) {
+        if (this.state == newState) return;
         this.state = newState;
 
-        switch(newState){
+        switch (newState) {
             case GameState.START:
                 break;
             case GameState.SERVE:
@@ -72,6 +76,7 @@ export class GameManager extends Component {
     }
     goToStore() {
         console.log("Download to play next level");
+        super_html_playable.download();
     }
 
     NextCustomer() {

@@ -38,7 +38,7 @@ export class CoinEffect extends Component {
         this.posInit = this.listCoin[0].getPosition();
     }
 
-    customerPurchase(anim: SkeletalAnimation) {
+    customerPurchase(hand: Node) {
         const screenPos = this.coinBox.convertToWorldSpaceAR(Vec3.ZERO);
         const screenPoint = new Vec3();
         this.camUI.worldToScreen(screenPos, screenPoint);
@@ -53,20 +53,21 @@ export class CoinEffect extends Component {
             ray.o.z + ray.d.z * DIST
         );
 
-        anim.play("paying");
         this.scheduleOnce(() => {
-            this.paying(this.table.getWorldPosition(), worldTargetPos);
+            this.paying(this.table.getWorldPosition(), worldTargetPos, hand);
         }, 0.5);
 
     }
 
-    paying(tablePos: Vec3, coinBoxWorldPos: Vec3) {
+    paying( tablePos: Vec3, coinBoxWorldPos: Vec3, hand: Node) {
         for (let i = 0; i < this.coinAmount; i++) {
-            this.listCoin[i].active = true;
             this.scheduleOnce(() => {
+                const startHandPos = hand.getWorldPosition();
+                this.listCoin[i].setWorldPosition(startHandPos);
                 const startPos = this.listCoin[i].getPosition();
                 const endPos = new Vec3(tablePos.x + randomRange(-0.05, 0.05), tablePos.y, tablePos.z + randomRange(-0.05, 0.05));
-
+                
+                this.listCoin[i].active = true;
                 this.tweenCoin(this.listCoin[i], startPos, endPos, 45);
             }, i * 0.1);
         }

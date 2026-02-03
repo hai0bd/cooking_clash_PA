@@ -1,5 +1,5 @@
-thêm character
 thêm anim tay
+1 thêm character
 0.5 làm không kịp => khách angry, phá quán => ném boom 
 1giảm speed thỏ
 1chỉnh camera

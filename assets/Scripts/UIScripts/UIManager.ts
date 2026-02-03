@@ -58,13 +58,13 @@ export class UIManager extends Component {
         const baseScale = this.coinAmount.node.scale.clone();
         this.schedule(() => {
             tween(this.coinAmount.node)
-                .to(0.08, { scale: baseScale.clone().multiplyScalar((i * 0.2) + 1) })
-                .to(0.05, { scale: baseScale })
+                .to(0.08, { scale: baseScale.clone().multiplyScalar((i * 0.2) + 0.5) })
+                .to(0.02, { scale: baseScale })
                 .union()
                 .start();
             this.coinAmount.string = (currentScore + i).toString();
             i++;
-        }, 0.1, score - 1);
+        }, i * 0.1, score - 1);
     }
 
     setBubbleTarget(node: Node) {

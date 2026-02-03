@@ -1,4 +1,4 @@
-import { _decorator, Camera, Component, director, Node, sp, tween, UITransform, Vec3 } from 'cc';
+import { _decorator, Camera, Component, director, Label, Node, sp, tween, UITransform, Vec3 } from 'cc';
 import { Order } from './Actor/Order/OrderService';
 import { recipe } from './Actor/Order/FoodRecipe';
 import { EventUI } from './Core/Event';
@@ -19,6 +19,9 @@ export class Tut extends Component {
     @property(UITransform)
     uiTransform: UITransform = null;
 
+    @property(Label)
+    tutLabel: Label = null;
+
     private currentOrder: Order;
     private currentStep: number = 0;
 
@@ -36,8 +39,10 @@ export class Tut extends Component {
         this.anim.clearTracks();
         if (this.currentStep >= steps.length) {
             this.anim.enabled = false;
+            this.tutLabel.string = "";
             return;
         }
+        this.tutLabel.string = steps[this.currentStep].describe;
         for (let i = 0; i < this.ingredient.length; i++) {
             if (this.ingredient[i].layer == steps[this.currentStep].step) {
                 console.log(this.ingredient[i].name);
@@ -53,9 +58,9 @@ export class Tut extends Component {
         this.anim.enabled = true;
         const steps = recipe[order.name];
 
+        this.tutLabel.string = steps[this.currentStep].describe;
         for (let i = 0; i < this.ingredient.length; i++) {
             if (this.ingredient[i].layer == steps[this.currentStep].step) {
-                console.log(this.ingredient[i].name);
                 this.moveHand(this.ingredient[i]);
                 break;
             }
@@ -71,11 +76,11 @@ export class Tut extends Component {
         // this.node.setPosition(tempPos);
 
         tween(this.node)
-        .to(0.5, tempPos)
-        .call(() => {
-            this.anim.setAnimation(0, "tap");
-        })
-        .start();
+            .to(0.5, tempPos)
+            .call(() => {
+                this.anim.setAnimation(0, "tap");
+            })
+            .start();
     }
 }
 
